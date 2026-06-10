@@ -4,8 +4,6 @@ import { siteConfig } from "@/lib/config";
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-hero-gradient">
-      <div className="absolute right-6 top-24 hidden h-1 w-16 bg-accent md:block" aria-hidden="true" />
-
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
         <div className="flex gap-6 md:gap-8">
           <div className="gold-stripe mt-3 self-stretch" aria-hidden="true" />
