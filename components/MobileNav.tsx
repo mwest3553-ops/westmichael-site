@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -16,23 +16,12 @@ interface MobileNavProps {
 export default function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Close menu on route change
+  // Close on route change
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
-
-  // Lock body scroll while menu is open
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
 
   // Close on Escape
   useEffect(() => {
@@ -44,16 +33,34 @@ export default function MobileNav({ items }: MobileNavProps) {
     return () => window.removeEventListener("keydown", handler);
   }, [open]);
 
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent | TouchEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [open]);
+
   return (
-    <>
+    <div ref={containerRef} className="relative md:hidden">
       <button
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="relative z-50 flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:text-accent md:hidden"
+        className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:text-accent"
       >
-        <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -82,17 +89,17 @@ export default function MobileNav({ items }: MobileNavProps) {
 
       {open && (
         <div
-          className="fixed inset-0 top-16 z-40 flex flex-col bg-bg/95 backdrop-blur-md md:hidden"
-          role="dialog"
-          aria-modal="true"
+          role="menu"
           aria-label="Site navigation"
+          className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-md border border-border-strong bg-surface shadow-xl ring-1 ring-black/40 animate-fade-in"
         >
-          <nav className="flex flex-col gap-1 px-6 pt-8">
+          <nav className="flex flex-col py-1">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="border-b border-border/60 py-5 text-h3 font-semibold text-ink transition-colors hover:text-accent"
+                role="menuitem"
+                className="px-4 py-3 text-meta font-medium text-ink transition-colors hover:bg-bg hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -100,6 +107,6 @@ export default function MobileNav({ items }: MobileNavProps) {
           </nav>
         </div>
       )}
-    </>
+    </div>
   );
 }

@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/config";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-hero-gradient">
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
+    <section className="relative flex min-h-screen items-start overflow-hidden bg-hero-gradient">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-12 pb-32 md:pt-20 md:pb-40">
         <div className="flex gap-6 md:gap-8">
           <div className="gold-stripe mt-3 self-stretch" aria-hidden="true" />
 
@@ -13,7 +13,9 @@ export default function HeroSection() {
               {siteConfig.authorJobTitle}
             </p>
             <h1 className="mt-6 text-hero-mobile text-balance text-ink md:text-display">
-              {siteConfig.name}
+              Michael A.
+              <br />
+              West III
             </h1>
             <p className="mt-6 max-w-2xl text-body-lg text-muted text-pretty md:text-h2 md:font-normal">
               {siteConfig.tagline}
