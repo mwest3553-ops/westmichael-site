@@ -11,10 +11,10 @@ const navItems = [
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-bg/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-meta font-semibold tracking-tight text-ink transition-colors hover:text-accent"
+          className="flex shrink-0 items-center gap-2 whitespace-nowrap text-xs font-semibold tracking-tight text-ink transition-colors hover:text-accent sm:gap-2.5 sm:text-meta"
         >
           <span className="inline-block h-4 w-0.5 bg-accent" aria-hidden="true" />
           {siteConfig.shortName}
@@ -30,12 +30,12 @@ export default function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <nav className="flex items-center gap-4 md:hidden">
+        <nav className="flex shrink-0 items-center gap-2.5 sm:gap-4 md:hidden">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-xs text-muted transition-colors hover:text-ink"
+              className="whitespace-nowrap text-[11px] text-muted transition-colors hover:text-ink sm:text-xs"
             >
               {item.label}
             </Link>

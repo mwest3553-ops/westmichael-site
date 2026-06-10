@@ -6,6 +6,10 @@ html {
   background-color: #0a1628;
   color-scheme: dark;
   scroll-behavior: smooth;
+  /* Prevent any stray horizontal scroll on mobile */
+  overflow-x: hidden;
+  /* Don't let mobile browsers zoom in on form fields */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -16,6 +20,23 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+/* Make MDX/Portable Text images responsive in articles */
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Force any long content (URLs, code blocks) to break, not overflow */
+.prose pre,
+.prose code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 ::selection {
