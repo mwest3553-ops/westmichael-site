@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/lib/config";
 
 interface NavItem {
   href: string;
@@ -16,14 +17,25 @@ interface MobileNavProps {
 export default function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Close on route change
+  // Close menu when route changes
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  // Close on Escape
+  // Lock body scroll while menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  // Close on Escape key
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -33,33 +45,16 @@ export default function MobileNav({ items }: MobileNavProps) {
     return () => window.removeEventListener("keydown", handler);
   }, [open]);
 
-  // Close on outside click
-  useEffect(() => {
-    if (!open) return;
-    const handler = (e: MouseEvent | TouchEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    document.addEventListener("touchstart", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-      document.removeEventListener("touchstart", handler);
-    };
-  }, [open]);
+  const close = () => setOpen(false);
 
   return (
-    <div ref={containerRef} className="relative md:hidden">
+    <>
+      {/* Hamburger button — sits in the site header at right edge */}
       <button
         type="button"
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-expanded={open}
-        onClick={() => setOpen((o) => !o)}
-        className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:text-accent"
+        aria-label="Open menu"
+        onClick={() => setOpen(true)}
+        className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:text-accent md:hidden"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -72,34 +67,64 @@ export default function MobileNav({ items }: MobileNavProps) {
           className="h-6 w-6"
           aria-hidden="true"
         >
-          {open ? (
-            <>
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </>
-          ) : (
-            <>
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </>
-          )}
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
 
+      {/* Full-screen takeover when open */}
       {open && (
         <div
-          role="menu"
+          role="dialog"
+          aria-modal="true"
           aria-label="Site navigation"
-          className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-md border border-border-strong bg-surface shadow-xl ring-1 ring-black/40 animate-fade-in"
+          className="fixed inset-0 z-50 flex flex-col bg-bg md:hidden animate-fade-in"
         >
-          <nav className="flex flex-col py-1">
+          {/* Top bar mirrors site header */}
+          <div className="flex h-16 items-center justify-between border-b border-border/60 px-5 sm:px-6">
+            <Link
+              href="/"
+              onClick={close}
+              className="flex items-center gap-2.5 whitespace-nowrap text-meta font-semibold tracking-tight text-ink"
+            >
+              <span
+                className="inline-block h-4 w-0.5 bg-accent"
+                aria-hidden="true"
+              />
+              {siteConfig.shortName}
+            </Link>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={close}
+              className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:text-accent"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Stacked nav items */}
+          <nav className="flex flex-col px-6 pt-6">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                role="menuitem"
-                className="px-4 py-3 text-meta font-medium text-ink transition-colors hover:bg-bg hover:text-accent"
+                onClick={close}
+                className="border-b border-border/60 py-6 text-page-h1-mobile font-bold text-ink transition-colors hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -107,6 +132,6 @@ export default function MobileNav({ items }: MobileNavProps) {
           </nav>
         </div>
       )}
-    </div>
+    </>
   );
 }
