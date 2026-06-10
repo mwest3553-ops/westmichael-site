@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/config";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-start overflow-hidden bg-hero-gradient">
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-12 pb-32 md:pt-20 md:pb-40">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-hero-gradient">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
         <div className="flex gap-6 md:gap-8">
           <div className="gold-stripe mt-3 self-stretch" aria-hidden="true" />
 
