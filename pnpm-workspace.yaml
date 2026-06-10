@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+  - esbuild
+  - unrs-resolver
+  - sharp
+
+overrides:
+  "@portabletext/editor": "1.50.0"

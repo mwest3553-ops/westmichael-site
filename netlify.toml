@@ -1,0 +1,21 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  # Tell Netlify to use pnpm
+  NETLIFY_USE_PNPM = "true"
+  # Pin Node version
+  NODE_VERSION = "20"
+
+# Netlify's Next.js runtime plugin (auto-installed, but explicit is better)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Studio is a client-side React app embedded at /studio
+# Don't try to prerender or cache it aggressively
+[[headers]]
+  for = "/studio/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Robots-Tag = "noindex, nofollow"

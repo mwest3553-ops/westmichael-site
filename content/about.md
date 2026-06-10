@@ -1,0 +1,1 @@
+Saint Louis University B.S. candidate, Class of 2029, with concentrations in marketing and applied psychology. Business Development/Marketing Intern at Enterprise Mobility's startup program — applying business insight and customer insight to commercial sales operations. Founder of Westhird, a web design agency for small businesses and local trades.
