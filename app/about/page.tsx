@@ -6,6 +6,7 @@ import remarkHtml from "remark-html";
 import matter from "gray-matter";
 import TimelineList from "@/components/TimelineList";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import AboutHero from "@/components/AboutHero";
 import { businessSkills, techSkills, skills } from "@/lib/experience";
 import type { SkillTag } from "@/lib/types";
 
@@ -46,7 +47,7 @@ export default async function AboutPage() {
 
   return (
     <article>
-      <section className="bg-hero-gradient py-20 md:py-28">
+      <section className="bg-hero-gradient pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="mx-auto max-w-prose px-6">
           <div className="flex gap-6 md:gap-8">
             <div className="gold-stripe self-stretch" aria-hidden="true" />
@@ -59,6 +60,9 @@ export default async function AboutPage() {
               </ScrollFadeIn>
             </div>
           </div>
+        </div>
+        <div className="mt-12 md:mt-16">
+          <AboutHero />
         </div>
       </section>
 
