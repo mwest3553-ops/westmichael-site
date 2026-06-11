@@ -103,7 +103,7 @@ export const projects: Project[] = [
 export const timeline: TimelineEntry[] = [
   {
     institution: "Saint Louis University",
-    role: "B.S. in Marketing & Applied Psychology",
+    role: "B.S. in Marketing & Psychology",
     dates: "Expected May 2029",
     note: "University Scholarship Recipient",
   },

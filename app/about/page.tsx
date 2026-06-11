@@ -13,7 +13,7 @@ import type { SkillTag } from "@/lib/types";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Michael A. West III — Saint Louis University B.S. candidate with concentrations in marketing and applied psychology. Founder of Westhird.",
+    "Michael A. West III — pursuing a B.S. in Marketing and Psychology at Saint Louis University. Founder of Westhird.",
 };
 
 async function getAboutHtml() {

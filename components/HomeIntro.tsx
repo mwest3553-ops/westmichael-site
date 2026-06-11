@@ -18,7 +18,7 @@ export default function HomeIntro() {
         <ScrollFadeIn delay={0.1}>
           <div className="mt-10 space-y-5 text-body-lg text-muted-light md:text-h3 md:font-normal">
             <p>
-              I'm a Saint Louis University B.S. candidate, Class of 2029, with concentrations in marketing and applied psychology.
+              I'm pursuing a B.S. in Marketing and Psychology at Saint Louis University, Class of 2029.
             </p>
             <p>
               Currently, I'm a Business Development/Marketing Intern at Enterprise Mobility's startup program — applying business insight and customer insight to commercial sales — and the founder of Westhird, a web design agency for small businesses and local trades.
