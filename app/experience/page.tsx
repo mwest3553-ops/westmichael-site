@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { experienceRoles, projects } from "@/lib/experience";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ExperienceItem from "@/components/ExperienceItem";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+
+const VOLUNTEER_COMPANIES = ["Saint Louis Public Schools"];
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -10,6 +13,13 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencePage() {
+  const roles = experienceRoles.filter(
+    (r) => !VOLUNTEER_COMPANIES.includes(r.company)
+  );
+  const volunteering = experienceRoles.filter((r) =>
+    VOLUNTEER_COMPANIES.includes(r.company)
+  );
+
   return (
     <article>
       <section className="bg-hero-gradient py-20 md:py-28">
@@ -29,12 +39,23 @@ export default function ExperiencePage() {
       </section>
 
       <section className="bg-bg py-16 md:py-20">
-        <div className="mx-auto max-w-prose px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <ScrollFadeIn>
             <h2 className="text-h2 font-bold text-ink">Roles</h2>
           </ScrollFadeIn>
+          <div className="mt-10 md:mt-14">
+            <ExperienceTimeline roles={roles} />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-bg pb-20 md:pb-24">
+        <div className="mx-auto max-w-prose px-6">
+          <ScrollFadeIn>
+            <h2 className="text-h2 font-bold text-ink">Volunteering</h2>
+          </ScrollFadeIn>
           <div className="mt-8 space-y-12">
-            {experienceRoles.map((role, i) => (
+            {volunteering.map((role, i) => (
               <ExperienceItem key={role.company + i} role={role} index={i} />
             ))}
           </div>
