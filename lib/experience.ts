@@ -8,7 +8,7 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "Maryland Heights, MO",
     bullets: [
-      "Selected for a startup program within Enterprise Mobility designed to develop business development talent, applying strategic thinking, business insight, and customer insight to real-world commercial sales operations.",
+      "Selected for a startup program within Enterprise Mobility designed to develop business development talent, applying strategic thinking and business and customer insight to real-world commercial sales operations.",
       "Conduct business insight research and competitive analysis to identify process gaps, delivering data-backed recommendations that directly inform operational improvements.",
       "Translate customer insight into targeted prospecting and pipeline development for commercial accounts in the St. Louis market.",
       "Collaborate cross-functionally to surface inefficiencies and translate business and customer insight into strategic recommendations presented to leadership.",
