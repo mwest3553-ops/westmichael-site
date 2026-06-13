@@ -8,7 +8,7 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "Maryland Heights, MO",
     bullets: [
-      "Selected for a startup program within Enterprise Mobility designed to develop business development talent, applying strategic thinking and business and customer insight to real-world commercial sales operations.",
+      "Selected for an Enterprise Mobility startup program focused on developing emerging talent in commercial business development, applying strategic thinking and business and customer insight to real-world sales operations.",
       "Conduct business insight research and competitive analysis to identify process gaps, delivering data-backed recommendations that directly inform operational improvements.",
       "Translate customer insight into targeted prospecting and pipeline development for commercial accounts in the St. Louis market.",
       "Collaborate cross-functionally to surface inefficiencies and translate business and customer insight into strategic recommendations presented to leadership.",
@@ -21,7 +21,7 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "St. Louis, MO",
     bullets: [
-      "Founded Westhird, a web design agency building custom hand-coded websites for small businesses and local trades, delivering full sites in 7 days starting at $450.",
+      "Founded Westhird, a digital marketing agency for small businesses and local trades, building custom hand-coded websites and delivering full sites in 7 days starting at $450.",
       "Execute the complete sales cycle independently: cold outreach, discovery, audit delivery, live demo, and contract close through a structured consultative framework.",
       "Manage all operations end-to-end including client discovery, pricing strategy, design, development, and post-launch support.",
       "Build and maintain a pipeline of local business prospects, securing paid contracts through value-first selling and transparent pricing.",

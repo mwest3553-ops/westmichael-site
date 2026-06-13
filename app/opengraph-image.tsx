@@ -82,15 +82,16 @@ export default async function OpenGraphImage() {
           </h1>
           <p
             style={{
-              fontSize: 50,
+              fontSize: 42,
               color: "#A8B0BD",
               fontWeight: 500,
               margin: 0,
               marginTop: 36,
               letterSpacing: "-0.01em",
+              maxWidth: 900,
             }}
           >
-            Marketing. Psychology.
+            {siteConfig.tagline}
           </p>
         </div>
 

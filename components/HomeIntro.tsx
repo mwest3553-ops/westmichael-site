@@ -21,7 +21,7 @@ export default function HomeIntro() {
               I'm pursuing a B.S. in Marketing and Psychology at Saint Louis University, Class of 2029.
             </p>
             <p>
-              Currently, I'm a Business Development/Marketing Intern at Enterprise Mobility's startup program — applying business and customer insight to commercial sales — and the founder of Westhird, a web design agency for small businesses and local trades.
+              Currently, I'm a Business Development/Marketing Intern at Enterprise Mobility's startup program — applying business and customer insight to commercial sales — and the founder of Westhird, a digital marketing agency for small businesses and local trades.
             </p>
           </div>
         </ScrollFadeIn>
