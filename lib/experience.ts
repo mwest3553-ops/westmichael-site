@@ -9,7 +9,7 @@ export const experienceRoles: ExperienceRole[] = [
     location: "Maryland Heights, MO",
     bullets: [
       "Selected for an Enterprise Mobility startup program focused on developing emerging talent in commercial business development, applying strategic thinking and business and customer insight to real-world sales operations.",
-      "Conduct business insight research and competitive analysis to identify process gaps, delivering data-backed recommendations that directly inform operational improvements.",
+      "Conduct business insight research and competitive analysis in a fast-paced environment while working to identify process gaps, delivering data-backed recommendations that directly inform operational improvements.",
       "Translate customer insight into targeted prospecting and pipeline development for commercial accounts in the St. Louis market.",
       "Collaborate cross-functionally to surface inefficiencies and translate business and customer insight into strategic recommendations presented to leadership.",
     ],
@@ -79,7 +79,7 @@ export const experienceRoles: ExperienceRole[] = [
 
 export const projects: Project[] = [
   {
-    name: "Business Outreach Campaign",
+    name: "Business Development",
     description:
       "Prospected 10+ local business owners through cold outreach, securing meetings with decision-makers across St. Louis.",
   },
@@ -148,17 +148,13 @@ export const timeline: TimelineEntry[] = [
 // Skills ordered with most important first within each category.
 // Business category emphasizes commercial work; Tech category emphasizes practical tooling.
 export const skills: SkillTag[] = [
-  // Business — ordered by importance to his current work
+  // Business — ordered per Michael's spec
   { label: "Business Development", category: "business" },
-  { label: "Marketing", category: "business" },
-  { label: "Sales", category: "business" },
-  { label: "Leadership", category: "business" },
+  { label: "Sales and Marketing Team Leadership", category: "business" },
   { label: "Strategic Thinking", category: "business" },
-  { label: "Marketing Insight", category: "business" },
-  { label: "Customer Insight", category: "business" },
-  { label: "CRM", category: "business" },
-  { label: "Prospecting", category: "business" },
-  { label: "Competitive Analysis", category: "business" },
+  { label: "Marketing Insights", category: "business" },
+  { label: "Customer Research", category: "business" },
+  { label: "CRM and Competitive Analysis", category: "business" },
 
   // Tech — certified credentials first, then others by importance
   { label: "Excel", certified: true, category: "tech" },

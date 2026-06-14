@@ -26,8 +26,8 @@ async function getAboutHtml() {
 
 function SkillBox({ skill }: { skill: SkillTag }) {
   return (
-    <li className="relative flex h-16 items-center justify-center rounded-md border border-border-light bg-white px-4 text-center text-meta font-medium text-ink-dark shadow-sm">
-      <span className="whitespace-nowrap">{skill.label}</span>
+    <li className="relative flex min-h-[3.75rem] items-center justify-center rounded-md border border-border-light bg-white px-4 py-3 text-center text-meta font-medium leading-snug text-ink-dark shadow-sm">
+      <span>{skill.label}</span>
       {skill.certified && (
         <span
           className="absolute right-2.5 top-2 text-xs leading-none text-accent-deep"
@@ -104,7 +104,7 @@ export default async function AboutPage() {
           <ScrollFadeIn delay={0.05}>
             <div className="mt-12">
               <h3 className="text-kicker uppercase text-muted-light">Business</h3>
-              <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {businessSkills.map((skill) => (
                   <SkillBox key={skill.label} skill={skill} />
                 ))}
@@ -115,7 +115,7 @@ export default async function AboutPage() {
           <ScrollFadeIn delay={0.1}>
             <div className="mt-10">
               <h3 className="text-kicker uppercase text-muted-light">Tech</h3>
-              <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {techSkills.map((skill) => (
                   <SkillBox key={skill.label} skill={skill} />
                 ))}
