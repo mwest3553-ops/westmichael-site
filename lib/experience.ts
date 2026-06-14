@@ -150,11 +150,13 @@ export const timeline: TimelineEntry[] = [
 export const skills: SkillTag[] = [
   // Business — ordered per Michael's spec
   { label: "Business Development", category: "business" },
-  { label: "Sales and Marketing Team Leadership", category: "business" },
+  { label: "Sales and Marketing", category: "business" },
+  { label: "Team Leadership", category: "business" },
   { label: "Strategic Thinking", category: "business" },
   { label: "Marketing Insights", category: "business" },
   { label: "Customer Research", category: "business" },
-  { label: "CRM and Competitive Analysis", category: "business" },
+  { label: "CRM", category: "business" },
+  { label: "Competitive Analysis", category: "business" },
 
   // Tech — certified credentials first, then others by importance
   { label: "Excel", certified: true, category: "tech" },

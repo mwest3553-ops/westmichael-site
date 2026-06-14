@@ -46,10 +46,7 @@ export default async function BlogIndexPage({
           {posts.length === 0 ? (
             <ScrollFadeIn>
               <div className="mx-auto max-w-prose rounded-md border border-border bg-surface px-6 py-16 text-center md:py-20">
-                <p className="text-kicker uppercase text-accent">Coming soon</p>
-                <h2 className="mt-5 text-h2 font-bold text-ink">
-                  No articles yet.
-                </h2>
+                <h2 className="text-h2 font-bold text-accent">Coming soon</h2>
                 <p className="mt-4 text-body text-muted">
                   New writing is on the way — check back soon.
                 </p>
