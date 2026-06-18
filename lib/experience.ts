@@ -40,6 +40,16 @@ export const experienceRoles: ExperienceRole[] = [
     ],
   },
   {
+    company: "Rise Community Development",
+    title: "Young Professionals Board — Marketing Committee",
+    startDate: "Jun 2026",
+    endDate: "Present",
+    location: "St. Louis, MO",
+    bullets: [
+      "Selected to the Marketing Committee of the Young Professionals Board for a St. Louis community development nonprofit, supporting marketing and outreach for local economic development initiatives.",
+    ],
+  },
+  {
     company: "Saint Louis Public Schools",
     title: "Teacher Aide",
     startDate: "Aug 2024",
@@ -78,16 +88,6 @@ export const experienceRoles: ExperienceRole[] = [
 ];
 
 export const projects: Project[] = [
-  {
-    name: "Business Development",
-    description:
-      "Prospected 10+ local business owners through cold outreach, securing meetings with decision-makers across St. Louis.",
-  },
-  {
-    name: "Customer Satisfaction Survey",
-    description:
-      "Designed and executed a customer experience survey applying psychological research methods. Translated feedback into data-driven insights using Excel-based analysis.",
-  },
   {
     name: "Independent Apparel Brand",
     description:

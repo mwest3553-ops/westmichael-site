@@ -4,7 +4,10 @@ import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ExperienceItem from "@/components/ExperienceItem";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 
-const VOLUNTEER_COMPANIES = ["Saint Louis Public Schools"];
+const VOLUNTEER_COMPANIES = [
+  "Rise Community Development",
+  "Saint Louis Public Schools",
+];
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -50,11 +53,11 @@ export default function ExperiencePage() {
       </section>
 
       <section className="bg-bg pb-20 md:pb-24">
-        <div className="mx-auto max-w-prose px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <ScrollFadeIn>
             <h2 className="text-h2 font-bold text-ink">Volunteering</h2>
           </ScrollFadeIn>
-          <div className="mt-8 space-y-12">
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             {volunteering.map((role, i) => (
               <ExperienceItem key={role.company + i} role={role} index={i} />
             ))}

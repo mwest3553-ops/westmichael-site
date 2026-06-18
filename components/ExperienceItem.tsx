@@ -9,17 +9,12 @@ interface ExperienceItemProps {
 export default function ExperienceItem({ role, index }: ExperienceItemProps) {
   return (
     <ScrollFadeIn as="article" delay={index * 0.04} className="border-t border-border pt-8">
-      <header className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
-        <div>
-          <h3 className="text-h2 font-bold text-ink">{role.company}</h3>
-          <p className="mt-2 text-body text-muted">{role.title}</p>
-        </div>
-        <div className="text-meta text-muted md:text-right">
-          <p>
-            {role.startDate} – {role.endDate}
-          </p>
-          <p>{role.location}</p>
-        </div>
+      <header>
+        <h3 className="text-h3 font-semibold text-ink">{role.company}</h3>
+        <p className="mt-1 text-body text-muted">{role.title}</p>
+        <p className="mt-1 text-meta text-muted">
+          {role.startDate} – {role.endDate} · {role.location}
+        </p>
       </header>
       <ul className="mt-5 space-y-3">
         {role.bullets.map((bullet, i) => (
