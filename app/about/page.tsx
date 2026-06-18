@@ -48,7 +48,7 @@ export default async function AboutPage() {
   return (
     <article>
       <section className="bg-hero-gradient pt-20 pb-16 md:pt-28 md:pb-20">
-        <div className="mx-auto max-w-prose px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="flex gap-6 md:gap-8">
             <div className="gold-stripe self-stretch" aria-hidden="true" />
             <div>

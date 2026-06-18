@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <article>
       <section className="bg-hero-gradient py-20 md:py-28">
-        <div className="mx-auto max-w-prose px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="flex gap-6 md:gap-8">
             <div className="gold-stripe self-stretch" aria-hidden="true" />
             <div>
