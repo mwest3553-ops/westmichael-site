@@ -41,12 +41,12 @@ export const experienceRoles: ExperienceRole[] = [
   },
   {
     company: "Rise Community Development",
-    title: "Young Professionals Board — Marketing Committee",
+    title: "Young Professionals Board — Marketing and Events Committee",
     startDate: "Jun 2026",
     endDate: "Present",
     location: "St. Louis, MO",
     bullets: [
-      "Selected to the Marketing Committee of the Young Professionals Board for a St. Louis community development nonprofit, supporting marketing and outreach for local economic development initiatives.",
+      "Selected to the Marketing and Events Committee of the Young Professionals Board for a St. Louis community development nonprofit, supporting marketing and outreach for local economic development initiatives.",
     ],
   },
   {
