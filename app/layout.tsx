@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    // OG image is auto-generated via app/opengraph-image.tsx
+    // OG image: static app/opengraph-image.png (1200x630)
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    // Twitter image inherits from opengraph-image.tsx
+    // Twitter image: static app/twitter-image.png (1200x630)
   },
   robots: {
     index: true,
