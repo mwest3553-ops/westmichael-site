@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { siteConfig } from "@/lib/config";
 
 interface EmailLinkProps {
@@ -9,22 +10,15 @@ interface EmailLinkProps {
    * Optional label override (text or JSX). If omitted, renders the email address.
    */
   label?: React.ReactNode;
-  /**
-   * If true, shows the email address even when label is provided.
-   */
-  showAddressBeside?: boolean;
 }
 
 /**
  * Email link that opens the user's mail client via mailto AND copies the
- * address to the clipboard on click. Works as a fallback when mailto
- * isn't wired up to anything on the visitor's system.
+ * address to the clipboard on click. On copy, shows a fixed toast at the
+ * bottom of the screen (portaled to body) so the confirmation never overlaps
+ * the email text or sits in an odd spot.
  */
-export default function EmailLink({
-  className,
-  label,
-  showAddressBeside = false,
-}: EmailLinkProps) {
+export default function EmailLink({ className, label }: EmailLinkProps) {
   const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
@@ -44,24 +38,28 @@ export default function EmailLink({
   };
 
   return (
-    <a
-      href={`mailto:${siteConfig.email}`}
-      onClick={handleClick}
-      className={`relative ${className ?? ""}`}
-      aria-label={`Email ${siteConfig.email}`}
-    >
-      {label ?? siteConfig.email}
-      {showAddressBeside && label && (
-        <span className="ml-2 text-xs text-muted">({siteConfig.email})</span>
-      )}
-      {copied && (
-        <span
-          className="absolute right-3 top-3 rounded-sm bg-accent px-2 py-0.5 text-xs font-semibold text-ink-dark"
-          aria-live="polite"
-        >
-          Copied!
-        </span>
-      )}
-    </a>
+    <>
+      <a
+        href={`mailto:${siteConfig.email}`}
+        onClick={handleClick}
+        className={className}
+        aria-label={`Email ${siteConfig.email}`}
+      >
+        {label ?? siteConfig.email}
+      </a>
+
+      {copied &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            role="status"
+            aria-live="polite"
+            className="fixed bottom-6 left-1/2 z-[70] -translate-x-1/2 rounded-md bg-accent px-4 py-2 text-meta font-semibold text-ink-dark shadow-xl animate-fade-in"
+          >
+            Email copied to clipboard
+          </div>,
+          document.body
+        )}
+    </>
   );
 }
