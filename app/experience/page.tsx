@@ -36,6 +36,30 @@ export default function ExperiencePage() {
                   The full résumé.
                 </h1>
               </ScrollFadeIn>
+              <ScrollFadeIn delay={0.05}>
+                <a
+                  href="/Michael-A-West-III-Resume.pdf"
+                  download="Michael A. West III - Resume.pdf"
+                  className="mt-8 inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 text-meta font-semibold text-ink-dark transition-colors hover:bg-accent-hover"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download Resume
+                </a>
+              </ScrollFadeIn>
             </div>
           </div>
         </div>
