@@ -61,7 +61,7 @@ export default function AboutHero() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 768px"
-              priority={i === 0}
+              priority
               className="object-cover"
               style={{ objectPosition: img.position }}
             />

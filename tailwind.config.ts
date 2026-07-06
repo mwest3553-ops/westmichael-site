@@ -68,6 +68,10 @@ const config: Config = {
       animation: {
         "fade-in": "fadeIn 800ms cubic-bezier(0.16, 1, 0.3, 1) both",
         "fade-in-up": "fadeInUp 800ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "glow-pulse": "glowPulse 6s ease-in-out infinite",
+        "orb-1": "orbFloat 14s ease-in-out infinite",
+        "orb-2": "orbFloat 18s ease-in-out infinite reverse",
+        "orb-3": "orbFloat 16s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -77,6 +81,24 @@ const config: Config = {
         fadeInUp: {
           from: { opacity: "0", transform: "translateY(16px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        glowPulse: {
+          "0%, 100%": { opacity: "0.55" },
+          "50%": { opacity: "0.85" },
+        },
+        orbFloat: {
+          "0%, 100%": {
+            transform: "translate(0, 0) scale(1)",
+            borderRadius: "48%",
+          },
+          "33%": {
+            transform: "translate(85px, -55px) scale(1.22)",
+            borderRadius: "40% 60% 55% 45% / 55% 45% 60% 40%",
+          },
+          "66%": {
+            transform: "translate(-65px, 45px) scale(1.08)",
+            borderRadius: "60% 40% 45% 55% / 45% 60% 40% 55%",
+          },
         },
       },
       backgroundImage: {

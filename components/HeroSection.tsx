@@ -1,12 +1,19 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import AnimatedStripe from "./AnimatedStripe";
+import FloatingOrbs from "./FloatingOrbs";
 
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-hero-gradient">
+      <FloatingOrbs />
+      <div
+        className="radiance animate-glow-pulse pointer-events-none absolute left-[-6rem] top-1/4 h-[30rem] w-[36rem]"
+        aria-hidden="true"
+      />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
         <div className="flex gap-6 md:gap-8">
-          <div className="gold-stripe mt-3 self-stretch" aria-hidden="true" />
+          <AnimatedStripe className="mt-3 self-stretch" />
 
           <div className="flex-1 animate-fade-in-up">
             <p className="text-kicker uppercase text-accent">
@@ -22,7 +29,7 @@ export default function HeroSection() {
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="#experience"
+                href="/experience"
                 className="inline-flex items-center justify-center rounded-sm bg-accent px-6 py-3 text-meta font-semibold text-ink-dark transition-colors hover:bg-accent-hover"
               >
                 View My Experience

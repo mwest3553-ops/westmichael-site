@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import AnimatedStripe from "@/components/AnimatedStripe";
+import FloatingOrbs from "@/components/FloatingOrbs";
 import EmailLink from "@/components/EmailLink";
 
 export const metadata: Metadata = {
@@ -11,10 +13,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <article>
-      <section className="bg-hero-gradient py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative overflow-hidden bg-hero-gradient py-20 md:py-28">
+        <FloatingOrbs />
+        <div className="relative mx-auto max-w-6xl px-6">
           <div className="flex gap-6 md:gap-8">
-            <div className="gold-stripe self-stretch" aria-hidden="true" />
+            <AnimatedStripe className="self-stretch" />
             <div>
               <ScrollFadeIn>
                 <p className="text-kicker uppercase text-accent">Contact</p>
@@ -29,40 +32,38 @@ export default function ContactPage() {
 
       <section className="bg-bg py-16 md:py-24">
         <div className="mx-auto max-w-prose px-6">
-          <ScrollFadeIn delay={0.05}>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href={siteConfig.linkedIn}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="group flex items-center justify-between rounded-md border border-border bg-surface p-5 transition-colors hover:border-accent md:p-6"
-                >
-                  <span className="text-h3 font-semibold text-ink group-hover:text-accent">
-                    LinkedIn
-                  </span>
-                  <span className="text-meta text-muted group-hover:text-accent">
-                    →
-                  </span>
-                </a>
-              </li>
-              <li>
-                <EmailLink
-                  className="group flex items-center justify-between rounded-md border border-border bg-surface p-5 transition-colors hover:border-accent md:p-6"
-                  label={
-                    <>
-                      <span className="text-h3 font-semibold text-ink group-hover:text-accent">
-                        {siteConfig.email}
-                      </span>
-                      <span className="text-meta text-muted group-hover:text-accent">
-                        →
-                      </span>
-                    </>
-                  }
-                />
-              </li>
-            </ul>
-          </ScrollFadeIn>
+          <ul className="space-y-4">
+            <ScrollFadeIn as="li" from="left" delay={0.1}>
+              <a
+                href={siteConfig.linkedIn}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="group flex items-center justify-between rounded-md glass-panel p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)] md:p-6"
+              >
+                <span className="text-h3 font-semibold text-ink group-hover:text-accent">
+                  LinkedIn
+                </span>
+                <span className="text-meta text-muted group-hover:text-accent">
+                  →
+                </span>
+              </a>
+            </ScrollFadeIn>
+            <ScrollFadeIn as="li" from="right" delay={0.18}>
+              <EmailLink
+                className="group flex items-center justify-between rounded-md glass-panel p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)] md:p-6"
+                label={
+                  <>
+                    <span className="text-h3 font-semibold text-ink group-hover:text-accent">
+                      {siteConfig.email}
+                    </span>
+                    <span className="text-meta text-muted group-hover:text-accent">
+                      →
+                    </span>
+                  </>
+                }
+              />
+            </ScrollFadeIn>
+          </ul>
         </div>
       </section>
     </article>

@@ -24,7 +24,7 @@ export default function ArticleCard({ post, readingTimeText }: ArticleCardProps)
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block overflow-hidden rounded-md border border-border bg-surface transition-all hover:border-accent"
+      className="group block overflow-hidden rounded-md glass-panel transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)]"
     >
       <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-surface-2 via-bg to-bg-deep">
         {imageUrl ? (

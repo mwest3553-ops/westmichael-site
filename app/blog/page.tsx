@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import ArticleCard from "@/components/ArticleCard";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import AnimatedStripe from "@/components/AnimatedStripe";
+import FloatingOrbs from "@/components/FloatingOrbs";
 
 const POSTS_PER_PAGE = 6;
 
@@ -25,10 +27,11 @@ export default async function BlogIndexPage({
 
   return (
     <article>
-      <section className="bg-hero-gradient py-20 md:py-28">
+      <section className="relative overflow-hidden bg-hero-gradient py-20 md:py-28">
+        <FloatingOrbs />
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex gap-6 md:gap-8">
-            <div className="gold-stripe self-stretch" aria-hidden="true" />
+            <AnimatedStripe className="self-stretch" />
             <div>
               <ScrollFadeIn>
                 <p className="text-kicker uppercase text-accent">Writing</p>
@@ -56,7 +59,11 @@ export default async function BlogIndexPage({
             <>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {visible.map((post, i) => (
-                  <ScrollFadeIn key={post._id} delay={i * 0.05}>
+                  <ScrollFadeIn
+                    key={post._id}
+                    delay={i * 0.05}
+                    from={i % 2 === 0 ? "left" : "right"}
+                  >
                     <ArticleCard post={post} />
                   </ScrollFadeIn>
                 ))}

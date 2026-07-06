@@ -30,7 +30,11 @@ export default function HomeSelectedExperience() {
 
         <div className="mt-14 space-y-12 md:mt-20">
           {selected.map((role, i) => (
-            <ScrollFadeIn key={role.company + i} delay={i * 0.06}>
+            <ScrollFadeIn
+              key={role.company + i}
+              delay={i * 0.06}
+              from={i % 2 === 0 ? "left" : "right"}
+            >
               <article className="flex gap-6 border-t border-border pt-10 md:gap-8">
                 <div className="hidden h-1.5 w-1.5 flex-none translate-y-3 rounded-full bg-accent md:block" aria-hidden="true" />
                 <div className="flex-1">

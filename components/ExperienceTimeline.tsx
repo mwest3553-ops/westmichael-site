@@ -13,7 +13,7 @@ function TimelineCard({ role }: { role: ExperienceRole }) {
       <div className="inline-flex items-center rounded-sm bg-accent px-3.5 py-1 text-meta font-bold tracking-tight text-ink-dark">
         {startYear(role.startDate)}
       </div>
-      <div className="mt-2.5 rounded-md border border-border bg-surface p-5">
+      <div className="glass-panel mt-2.5 rounded-md p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)]">
         <h3 className="text-body font-semibold text-ink">{role.company}</h3>
         <p className="mt-0.5 text-meta text-muted">{role.title}</p>
         <p className="mt-0.5 text-xs text-muted">
@@ -62,7 +62,7 @@ export default function ExperienceTimeline({
               <div className="pl-12 md:grid md:grid-cols-2 md:gap-x-16 md:pl-0">
                 {onLeft ? (
                   <>
-                    <ScrollFadeIn>
+                    <ScrollFadeIn from="left">
                       <TimelineCard role={role} />
                     </ScrollFadeIn>
                     <div className="hidden md:block" aria-hidden="true" />
@@ -70,7 +70,7 @@ export default function ExperienceTimeline({
                 ) : (
                   <>
                     <div className="hidden md:block" aria-hidden="true" />
-                    <ScrollFadeIn>
+                    <ScrollFadeIn from="right">
                       <TimelineCard role={role} />
                     </ScrollFadeIn>
                   </>

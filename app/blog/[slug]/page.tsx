@@ -12,6 +12,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import PortableTextRenderer from "@/components/PortableTextRenderer";
 import ShareOnLinkedIn from "@/components/ShareOnLinkedIn";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
+import FloatingOrbs from "@/components/FloatingOrbs";
 
 interface BlogPostPageProps {
   params: { slug: string };
@@ -73,7 +74,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <ReadingProgressBar />
       <article className="bg-bg">
-        <section className="bg-hero-gradient pt-14 pb-16 md:pt-20 md:pb-24">
+        <section className="relative overflow-hidden bg-hero-gradient pt-14 pb-16 md:pt-20 md:pb-24">
+          <FloatingOrbs />
           <div className="mx-auto max-w-prose px-6">
             <Link
               href="/blog"

@@ -4,11 +4,12 @@ import ScrollFadeIn from "./ScrollFadeIn";
 interface ExperienceItemProps {
   role: ExperienceRole;
   index: number;
+  from?: "up" | "down" | "left" | "right";
 }
 
-export default function ExperienceItem({ role, index }: ExperienceItemProps) {
+export default function ExperienceItem({ role, index, from = "up" }: ExperienceItemProps) {
   return (
-    <ScrollFadeIn as="article" delay={index * 0.04} className="border-t border-border pt-8">
+    <ScrollFadeIn as="article" delay={index * 0.04} from={from} className="border-t border-border pt-8">
       <header className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
         <div>
           <h3 className="text-h2 font-bold text-ink">{role.company}</h3>

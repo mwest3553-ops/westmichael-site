@@ -6,7 +6,7 @@ import EmailLink from "./EmailLink";
 export default function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border/60 bg-bg-deep">
+    <footer className="relative border-t border-border/60 bg-bg-deep shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex flex-col gap-4 text-meta text-muted md:flex-row md:items-center md:justify-between">
           <p>

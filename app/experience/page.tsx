@@ -3,6 +3,8 @@ import { experienceRoles, projects } from "@/lib/experience";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ExperienceItem from "@/components/ExperienceItem";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import AnimatedStripe from "@/components/AnimatedStripe";
+import FloatingOrbs from "@/components/FloatingOrbs";
 
 const VOLUNTEER_COMPANIES = [
   "Rise Community Development",
@@ -25,10 +27,11 @@ export default function ExperiencePage() {
 
   return (
     <article>
-      <section className="bg-hero-gradient py-20 md:py-28">
+      <section className="relative overflow-hidden bg-hero-gradient py-20 md:py-28">
+        <FloatingOrbs />
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex gap-6 md:gap-8">
-            <div className="gold-stripe self-stretch" aria-hidden="true" />
+            <AnimatedStripe className="self-stretch" />
             <div className="flex-1">
               <ScrollFadeIn>
                 <p className="text-kicker uppercase text-accent">Experience</p>
@@ -83,7 +86,12 @@ export default function ExperiencePage() {
           </ScrollFadeIn>
           <div className="mt-8 space-y-12">
             {volunteering.map((role, i) => (
-              <ExperienceItem key={role.company + i} role={role} index={i} />
+              <ExperienceItem
+                key={role.company + i}
+                role={role}
+                index={i}
+                from={i % 2 === 0 ? "left" : "right"}
+              />
             ))}
           </div>
         </div>
