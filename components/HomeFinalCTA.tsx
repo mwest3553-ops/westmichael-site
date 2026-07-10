@@ -11,10 +11,14 @@ export default function HomeFinalCTA() {
       <div className="absolute left-0 top-1/2 hidden h-1 w-12 bg-accent md:block" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-6">
         <ScrollFadeIn>
-          <p className="text-kicker uppercase text-accent">Get in touch</p>
+          <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+            <span className="text-muted-light">04</span>
+            <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+            Get in touch
+          </p>
         </ScrollFadeIn>
         <ScrollFadeIn delay={0.05}>
-          <h2 className="mt-5 max-w-3xl text-page-h1-mobile text-balance text-ink md:text-display">
+          <h2 className="mt-5 max-w-3xl text-page-h1-mobile text-balance text-sheen md:text-display">
             Let's connect.
           </h2>
         </ScrollFadeIn>
@@ -30,8 +34,9 @@ export default function HomeFinalCTA() {
               <span className="text-kicker uppercase text-muted group-hover:text-accent">
                 LinkedIn
               </span>
-              <span className="mt-8 inline-flex items-center text-h3 font-semibold text-ink group-hover:text-accent">
-                Connect →
+              <span className="mt-8 inline-flex items-center gap-2 text-h3 font-semibold text-ink group-hover:text-accent">
+                Connect
+                <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
               </span>
             </a>
           </ScrollFadeIn>

@@ -14,7 +14,7 @@ function TimelineCard({ role }: { role: ExperienceRole }) {
         {startYear(role.startDate)}
       </div>
       <div className="glass-panel mt-2.5 rounded-md p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)]">
-        <h3 className="text-body font-semibold text-ink">{role.company}</h3>
+        <h3 className="text-body font-semibold text-ink transition-colors duration-300 hover:text-accent">{role.company}</h3>
         <p className="mt-0.5 text-meta text-muted">{role.title}</p>
         <p className="mt-0.5 text-xs text-muted">
           {role.startDate} – {role.endDate} · {role.location}
@@ -54,7 +54,7 @@ export default function ExperienceTimeline({
             <li key={role.company + i} className="relative">
               {/* Timeline dot */}
               <span
-                className="absolute left-4 top-2 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 border-accent bg-bg md:left-1/2"
+                className="absolute left-4 top-2 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 border-accent bg-bg transition-shadow duration-300 hover:shadow-[0_0_14px_3px_rgba(245,181,58,0.55)] md:left-1/2"
                 aria-hidden="true"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />

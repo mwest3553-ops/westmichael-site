@@ -34,8 +34,11 @@ export default async function BlogIndexPage({
             <AnimatedStripe className="self-stretch" />
             <div>
               <ScrollFadeIn>
-                <p className="text-kicker uppercase text-accent">Writing</p>
-                <h1 className="mt-5 text-page-h1-mobile text-balance text-ink md:text-page-h1">
+                <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+                  Writing
+                  <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+                </p>
+                <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
                   Essays and notes.
                 </h1>
               </ScrollFadeIn>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import NavMenu from "./NavMenu";
@@ -11,14 +14,54 @@ const navItems = [
 ];
 
 export default function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 8);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, y / max) : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-bg/70 backdrop-blur-lg">
-      <div className="flex h-16 items-center justify-between gap-4 px-5 sm:px-8">
+    <header
+      className={`sticky top-0 z-40 w-full border-b bg-bg/70 backdrop-blur-lg transition-all duration-300 ${
+        scrolled
+          ? "border-border/80 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.65)]"
+          : "border-border/40"
+      }`}
+    >
+      {/* Site-wide reading progress — thin gold rule that fills as you scroll */}
+      <div
+        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-accent"
+        style={{ transform: `scaleX(${progress})` }}
+        aria-hidden="true"
+      />
+      <div
+        className={`flex items-center justify-between gap-4 px-5 transition-all duration-300 sm:px-8 ${
+          scrolled ? "h-14" : "h-16"
+        }`}
+      >
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5 whitespace-nowrap text-meta font-semibold tracking-tight text-ink transition-colors hover:text-accent"
         >
-          <span className="inline-block h-4 w-0.5 bg-accent" aria-hidden="true" />
+          <span
+            className={`inline-block w-0.5 bg-accent transition-all duration-300 ${
+              scrolled ? "h-3.5" : "h-4"
+            }`}
+            aria-hidden="true"
+          />
           {siteConfig.shortName}
         </Link>
         <NavMenu items={navItems} />

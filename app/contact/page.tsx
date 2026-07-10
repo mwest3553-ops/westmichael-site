@@ -20,8 +20,11 @@ export default function ContactPage() {
             <AnimatedStripe className="self-stretch" />
             <div>
               <ScrollFadeIn>
-                <p className="text-kicker uppercase text-accent">Contact</p>
-                <h1 className="mt-5 text-page-h1-mobile text-balance text-ink md:text-page-h1">
+                <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+                  Contact
+                  <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+                </p>
+                <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
                   Get in touch.
                 </h1>
               </ScrollFadeIn>
@@ -43,7 +46,7 @@ export default function ContactPage() {
                 <span className="text-h3 font-semibold text-ink group-hover:text-accent">
                   LinkedIn
                 </span>
-                <span className="text-meta text-muted group-hover:text-accent">
+                <span className="text-meta text-muted transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">
                   →
                 </span>
               </a>
@@ -56,7 +59,7 @@ export default function ContactPage() {
                     <span className="text-h3 font-semibold text-ink group-hover:text-accent">
                       {siteConfig.email}
                     </span>
-                    <span className="text-meta text-muted group-hover:text-accent">
+                    <span className="text-meta text-muted transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">
                       →
                     </span>
                   </>

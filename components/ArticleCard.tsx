@@ -69,6 +69,12 @@ export default function ArticleCard({ post, readingTimeText }: ArticleCardProps)
             ))}
           </div>
         )}
+        <div className="mt-5 inline-flex items-center gap-1.5 text-meta font-medium text-muted transition-colors duration-300 group-hover:text-accent">
+          <span className="link-underline">Read article</span>
+          <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+            →
+          </span>
+        </div>
       </div>
     </Link>
   );

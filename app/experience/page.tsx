@@ -34,8 +34,11 @@ export default function ExperiencePage() {
             <AnimatedStripe className="self-stretch" />
             <div className="flex-1">
               <ScrollFadeIn>
-                <p className="text-kicker uppercase text-accent">Experience</p>
-                <h1 className="mt-5 text-page-h1-mobile text-balance text-ink md:text-page-h1">
+                <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+                  Experience
+                  <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+                </p>
+                <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
                   The full résumé.
                 </h1>
               </ScrollFadeIn>
@@ -43,7 +46,7 @@ export default function ExperiencePage() {
                 <a
                   href="/Michael-A-West-III-Resume.pdf"
                   download="Michael A. West III - Resume.pdf"
-                  className="mt-8 inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 text-meta font-semibold text-ink-dark transition-colors hover:bg-accent-hover"
+                  className="btn-sheen group mt-8 inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 text-meta font-semibold text-ink-dark transition-colors hover:bg-accent-hover"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +56,7 @@ export default function ExperiencePage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5"
                     aria-hidden="true"
                   >
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -71,7 +74,7 @@ export default function ExperiencePage() {
       <section className="bg-bg py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
           <ScrollFadeIn>
-            <h2 className="text-h2 font-bold text-ink">Roles</h2>
+            <h2 className="text-h2 font-bold text-sheen">Roles</h2>
           </ScrollFadeIn>
           <div className="mt-10 md:mt-14">
             <ExperienceTimeline roles={roles} />
@@ -82,7 +85,7 @@ export default function ExperiencePage() {
       <section className="bg-bg pb-20 md:pb-24">
         <div className="mx-auto max-w-prose px-6">
           <ScrollFadeIn>
-            <h2 className="text-h2 font-bold text-ink">Volunteering</h2>
+            <h2 className="text-h2 font-bold text-sheen">Volunteering</h2>
           </ScrollFadeIn>
           <div className="mt-8 space-y-12">
             {volunteering.map((role, i) => (
@@ -100,7 +103,10 @@ export default function ExperiencePage() {
       <section className="section-light border-y border-border-light py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <ScrollFadeIn>
-            <p className="text-kicker uppercase text-accent-deep">Projects</p>
+            <p className="flex items-center gap-2.5 text-kicker uppercase text-accent-deep">
+              Projects
+              <span className="h-px w-5 bg-accent-deep/40" aria-hidden="true" />
+            </p>
             <h2 className="mt-5 text-h2 font-bold text-ink-dark md:text-page-h1">
               Selected work.
             </h2>
@@ -108,8 +114,8 @@ export default function ExperiencePage() {
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
             {projects.map((project, i) => (
               <ScrollFadeIn key={project.name} delay={i * 0.04}>
-                <article className="rounded-md border border-border-light bg-white p-6 shadow-sm md:p-8">
-                  <h3 className="text-h3 font-semibold text-ink-dark">
+                <article className="lift-card group h-full rounded-md border border-border-light bg-white p-6 shadow-sm hover:border-accent/60 md:p-8">
+                  <h3 className="text-h3 font-semibold text-ink-dark transition-colors duration-300 group-hover:text-accent-deep">
                     {project.name}
                   </h3>
                   <p className="mt-3 text-body text-muted-light">

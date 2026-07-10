@@ -72,6 +72,8 @@ const config: Config = {
         "orb-1": "orbFloat 14s ease-in-out infinite",
         "orb-2": "orbFloat 18s ease-in-out infinite reverse",
         "orb-3": "orbFloat 16s ease-in-out infinite",
+        kenburns: "kenBurns 12s ease-in-out infinite alternate",
+        "ring-fill": "ringDash 5000ms linear both",
       },
       keyframes: {
         fadeIn: {
@@ -99,6 +101,14 @@ const config: Config = {
             transform: "translate(-65px, 45px) scale(1.08)",
             borderRadius: "60% 40% 45% 55% / 45% 60% 40% 55%",
           },
+        },
+        kenBurns: {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(1.06)" },
+        },
+        ringDash: {
+          from: { strokeDashoffset: "289" },
+          to: { strokeDashoffset: "0" },
         },
       },
       backgroundImage: {

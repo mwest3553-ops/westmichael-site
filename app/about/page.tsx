@@ -27,19 +27,32 @@ async function getAboutHtml() {
 }
 
 function SkillBox({ skill }: { skill: SkillTag }) {
-  return (
-    <li className="relative flex min-h-[3.75rem] items-center justify-center rounded-md border border-border-light bg-white px-4 py-3 text-center text-meta font-medium leading-snug text-ink-dark shadow-sm">
-      <span>{skill.label}</span>
-      {skill.certified && (
-        <span
-          className="absolute right-2.5 top-2 text-xs leading-none text-accent-deep"
-          title="Certified"
-          aria-label="Certified"
-        >
+  if (skill.certified) {
+    return (
+      <li className="flex min-h-[3.75rem] items-center justify-center gap-2 rounded-md border border-accent bg-accent px-4 py-3 text-center text-meta font-semibold leading-snug text-ink-dark shadow-[0_10px_24px_-12px_rgba(245,181,58,0.75)] transition-transform duration-300 hover:-translate-y-1">
+      <span aria-hidden="true" className="text-sm">
           ★
         </span>
-      )}
+        <span>{skill.label}</span>
+      </li>
+    );
+  }
+  return (
+    <li className="skill-chip flex min-h-[3.75rem] items-center justify-center rounded-md border border-border-light bg-white px-4 py-3 text-center text-meta font-medium leading-snug text-ink-dark shadow-sm">
+      <span className="relative z-[1]">{skill.label}</span>
     </li>
+  );
+}
+
+function CategoryHeader({ label, count }: { label: string; count: number }) {
+  return (
+    <div className="flex items-center gap-3">
+      <h3 className="text-kicker uppercase text-muted-light">{label}</h3>
+      <span className="font-mono text-xs text-muted-dark">
+        {String(count).padStart(2, "0")}
+      </span>
+      <span className="h-px flex-1 bg-border-light" aria-hidden="true" />
+    </div>
   );
 }
 
@@ -56,8 +69,11 @@ export default async function AboutPage() {
             <AnimatedStripe className="self-stretch" />
             <div>
               <ScrollFadeIn>
-                <p className="text-kicker uppercase text-accent">About</p>
-                <h1 className="mt-5 text-page-h1-mobile text-balance text-ink md:text-page-h1">
+                <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+                  About
+                  <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+                </p>
+                <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
                   A little background.
                 </h1>
               </ScrollFadeIn>
@@ -84,8 +100,11 @@ export default async function AboutPage() {
       <section className="bg-bg py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <ScrollFadeIn>
-            <p className="text-kicker uppercase text-accent">Timeline</p>
-            <h2 className="mt-5 text-h2 font-bold text-ink md:text-page-h1">
+            <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+              Timeline
+              <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+            </p>
+            <h2 className="mt-5 text-h2 font-bold text-sheen md:text-page-h1">
               Where I've been.
             </h2>
           </ScrollFadeIn>
@@ -106,8 +125,8 @@ export default async function AboutPage() {
 
           <ScrollFadeIn delay={0.05}>
             <div className="mt-12">
-              <h3 className="text-kicker uppercase text-muted-light">Business</h3>
-              <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <CategoryHeader label="Business" count={businessSkills.length} />
+              <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {businessSkills.map((skill) => (
                   <SkillBox key={skill.label} skill={skill} />
                 ))}
@@ -116,9 +135,9 @@ export default async function AboutPage() {
           </ScrollFadeIn>
 
           <ScrollFadeIn delay={0.1}>
-            <div className="mt-10">
-              <h3 className="text-kicker uppercase text-muted-light">Tech</h3>
-              <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="mt-12">
+              <CategoryHeader label="Tech" count={techSkills.length} />
+              <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {techSkills.map((skill) => (
                   <SkillBox key={skill.label} skill={skill} />
                 ))}
@@ -128,8 +147,11 @@ export default async function AboutPage() {
 
           {hasCertified && (
             <ScrollFadeIn delay={0.15}>
-              <p className="mt-6 text-xs text-muted-light">
-                <span className="text-accent-deep">★</span> indicates a certified skill
+              <p className="mt-8 flex items-center gap-2 text-xs text-muted-light">
+                <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] text-ink-dark">
+                  ★
+                </span>
+                Gold badge indicates a certified skill
               </p>
             </ScrollFadeIn>
           )}

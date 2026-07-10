@@ -14,16 +14,21 @@ export default function HomeSelectedExperience() {
         <ScrollFadeIn>
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-kicker uppercase text-accent">Selected Experience</p>
-              <h2 className="mt-5 text-page-h1-mobile text-balance text-ink md:text-page-h1">
+              <p className="flex items-center gap-2.5 text-kicker uppercase text-accent">
+                <span className="text-muted-light">02</span>
+                <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
+                Selected Experience
+              </p>
+              <h2 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
                 What I'm doing now.
               </h2>
             </div>
             <Link
               href="/experience"
-              className="hidden text-meta text-muted transition-colors hover:text-accent md:inline-flex"
+              className="group hidden items-center gap-1.5 text-meta text-muted transition-colors hover:text-accent md:inline-flex"
             >
-              Full résumé →
+              <span className="link-underline">Full résumé</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
             </Link>
           </div>
         </ScrollFadeIn>
@@ -35,12 +40,12 @@ export default function HomeSelectedExperience() {
               delay={i * 0.06}
               from={i % 2 === 0 ? "left" : "right"}
             >
-              <article className="flex gap-6 border-t border-border pt-10 md:gap-8">
-                <div className="hidden h-1.5 w-1.5 flex-none translate-y-3 rounded-full bg-accent md:block" aria-hidden="true" />
+              <article className="group flex gap-6 border-t border-border pt-10 transition-colors duration-300 hover:border-accent/40 md:gap-8">
+                <div className="hidden h-1.5 w-1.5 flex-none translate-y-3 rounded-full bg-accent transition-all duration-300 group-hover:scale-[1.8] group-hover:shadow-[0_0_12px_2px_rgba(245,181,58,0.6)] md:block" aria-hidden="true" />
                 <div className="flex-1">
                   <header className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
                     <div>
-                      <h3 className="text-h2 font-bold text-ink">
+                      <h3 className="text-h2 font-bold text-ink transition-colors duration-300 group-hover:text-accent">
                         {role.company}
                       </h3>
                       <p className="mt-2 text-body text-muted">{role.title}</p>
@@ -73,9 +78,10 @@ export default function HomeSelectedExperience() {
           <div className="mt-14 md:hidden">
             <Link
               href="/experience"
-              className="inline-flex items-center text-meta text-muted transition-colors hover:text-accent"
+              className="group inline-flex items-center gap-1.5 text-meta text-muted transition-colors hover:text-accent"
             >
-              See full résumé →
+              <span className="link-underline">See full résumé</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
             </Link>
           </div>
         </ScrollFadeIn>

@@ -4,27 +4,39 @@ export default function HomeIntro() {
   return (
     <section
       id="intro"
-      className="section-light scroll-anchor border-y border-border-light py-20 md:py-32"
+      className="section-light scroll-anchor border-y border-border-light py-24 md:py-40"
     >
-      <div className="mx-auto max-w-prose px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <ScrollFadeIn>
-          <p className="text-kicker uppercase text-accent-deep">Introduction</p>
+          <p className="flex items-center gap-2.5 text-kicker uppercase text-accent-deep">
+            <span className="text-muted-dark">01</span>
+            <span className="h-px w-5 bg-accent-deep/40" aria-hidden="true" />
+            Introduction
+          </p>
         </ScrollFadeIn>
-        <ScrollFadeIn delay={0.05}>
-          <h2 className="mt-5 text-page-h1-mobile text-balance text-ink-dark md:text-page-h1">
-            Building a career at the seam where consumer psychology meets business growth.
-          </h2>
-        </ScrollFadeIn>
-        <ScrollFadeIn delay={0.1}>
-          <div className="mt-10 space-y-5 text-body-lg text-muted-light md:text-h3 md:font-normal">
-            <p>
-              I'm pursuing a B.S. in Marketing and Psychology at Saint Louis University, Class of 2029.
-            </p>
-            <p>
-              Currently, I'm a Business Development/Marketing Intern at Enterprise Mobility's startup program — applying business and customer insight to commercial sales — and the founder of Westhird, a digital marketing agency for small businesses and local trades.
-            </p>
+
+        <div className="mt-12 grid grid-cols-1 gap-x-16 gap-y-12 md:mt-16 md:grid-cols-12">
+          <div className="md:col-span-6 lg:col-span-7">
+            <ScrollFadeIn delay={0.05}>
+              <h2 className="text-page-h1-mobile text-balance text-ink-dark md:text-page-h1">
+                Building a career at the seam where consumer psychology meets business growth.
+              </h2>
+            </ScrollFadeIn>
           </div>
-        </ScrollFadeIn>
+
+          <div className="md:col-span-6 md:pt-2 lg:col-span-5">
+            <ScrollFadeIn delay={0.12} from="right">
+              <div className="space-y-6 text-body-lg leading-relaxed text-muted-light md:text-h3 md:font-normal md:leading-relaxed">
+                <p>
+                  I'm pursuing a B.S. in Marketing and Psychology at Saint Louis University, Class of 2029.
+                </p>
+                <p>
+                  Currently, I'm a Business Development/Marketing Intern at Enterprise Mobility's startup program — applying business and customer insight to commercial sales — and the founder of Westhird, a digital marketing agency for small businesses and local trades.
+                </p>
+              </div>
+            </ScrollFadeIn>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -17,15 +17,15 @@ export default function SiteFooter() {
               href={siteConfig.linkedIn}
               target="_blank"
               rel="noreferrer noopener"
-              className="transition-colors hover:text-ink"
+              className="link-underline transition-colors hover:text-ink"
             >
               LinkedIn
             </a>
             <EmailLink
-              className="transition-colors hover:text-ink"
+              className="link-underline transition-colors hover:text-ink"
               label="Email"
             />
-            <Link href="/blog" className="transition-colors hover:text-ink">
+            <Link href="/blog" className="link-underline transition-colors hover:text-ink">
               Blog
             </Link>
           </div>
