@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/config";
 
 interface NavItem {
@@ -39,14 +39,11 @@ const itemVariants: Variants = {
  */
 export default function NavMenu({ items }: NavMenuProps) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
   const pathname = usePathname();
-  const router = useRouter();
 
-  // Close + reset selection on route change
+  // Close on route change
   useEffect(() => {
     setOpen(false);
-    setSelected(null);
   }, [pathname]);
 
   // Lock body scroll while open
@@ -67,28 +64,13 @@ export default function NavMenu({ items }: NavMenuProps) {
     return () => window.removeEventListener("keydown", handler);
   }, [open]);
 
-  // Pop the chosen tab, then navigate
-  const handleSelect = (e: React.MouseEvent, href: string) => {
-    e.preventDefault();
-    if (selected) return;
-    if (href === pathname) {
-      setOpen(false);
-      return;
-    }
-    setSelected(href);
-    window.setTimeout(() => router.push(href), 320);
-  };
-
   return (
     <>
       <button
         type="button"
         aria-label="Open menu"
         aria-expanded={open}
-        onClick={() => {
-          setSelected(null);
-          setOpen(true);
-        }}
+        onClick={() => setOpen(true)}
         className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:text-accent"
       >
         <svg
@@ -123,7 +105,7 @@ export default function NavMenu({ items }: NavMenuProps) {
             <div className="flex h-16 shrink-0 items-center justify-between gap-4 px-5 sm:px-8">
               <Link
                 href="/"
-                onClick={(e) => handleSelect(e, "/")}
+                onClick={() => setOpen(false)}
                 className="flex items-center gap-2.5 whitespace-nowrap text-meta font-semibold tracking-tight text-ink transition-colors hover:text-accent"
               >
                 <span className="inline-block h-4 w-0.5 bg-accent" aria-hidden="true" />
@@ -162,41 +144,21 @@ export default function NavMenu({ items }: NavMenuProps) {
               >
                 {items.map((item) => {
                   const active = pathname === item.href;
-                  const isSelected = selected === item.href;
                   return (
                     <motion.li
                       key={item.href}
                       variants={itemVariants}
                       className="origin-left"
                       whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.97 }}
-                      animate={
-                        selected
-                          ? isSelected
-                            ? {
-                                scale: 1.18,
-                                opacity: 1,
-                                transition: {
-                                  duration: 0.3,
-                                  ease: [0.16, 1, 0.3, 1],
-                                },
-                              }
-                            : {
-                                scale: 0.95,
-                                opacity: 0.2,
-                                transition: { duration: 0.3 },
-                              }
-                          : undefined
-                      }
                     >
                       <Link
                         href={item.href}
-                        onClick={(e) => handleSelect(e, item.href)}
+                        onClick={() => setOpen(false)}
                         className="group flex items-center gap-5 py-3 md:py-4"
                       >
                         <span
                           className={`inline-block h-7 w-1 shrink-0 origin-top transition-all md:h-10 ${
-                            active || isSelected
+                            active
                               ? "bg-accent"
                               : "bg-accent/0 group-hover:bg-accent"
                           }`}
@@ -204,7 +166,7 @@ export default function NavMenu({ items }: NavMenuProps) {
                         />
                         <span
                           className={`text-page-h1-mobile font-bold tracking-tight transition-colors md:text-page-h1 ${
-                            active || isSelected
+                            active
                               ? "text-accent"
                               : "text-ink group-hover:text-accent"
                           }`}

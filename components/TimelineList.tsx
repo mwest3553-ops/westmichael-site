@@ -7,7 +7,7 @@ export default function TimelineList() {
       {timeline.map((entry, i) => (
         <ScrollFadeIn as="li" key={entry.institution + i} delay={i * 0.04} className="group">
           <span
-            className="absolute -left-[5px] mt-1.5 inline-block h-2 w-2 rounded-full bg-accent ring-4 ring-bg transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_12px_2px_rgba(245,181,58,0.6)]"
+            className="absolute -left-[5px] mt-1.5 inline-block h-2 w-2 rounded-full bg-accent ring-4 ring-bg transition-[transform,box-shadow] duration-300 group-hover:scale-150 group-hover:shadow-[0_0_12px_2px_rgba(245,181,58,0.6)]"
             aria-hidden="true"
           />
           <div>
