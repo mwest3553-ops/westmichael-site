@@ -12,6 +12,8 @@ interface ScrollFadeInProps {
   as?: "div" | "section" | "article" | "li" | "ul";
   /** Direction the element flies in FROM as it enters view. */
   from?: Direction;
+  /** Travel distance in px (defaults: 80 vertical, 110 horizontal). */
+  distance?: number;
 }
 
 const OFFSETS: Record<Direction, { x?: number; y?: number }> = {
@@ -33,6 +35,7 @@ export default function ScrollFadeIn({
   className,
   as = "div",
   from = "up",
+  distance,
 }: ScrollFadeInProps) {
   const prefersReducedMotion = useReducedMotion();
   const MotionTag = motion[as];
@@ -51,11 +54,21 @@ export default function ScrollFadeIn({
     );
   }
 
-  const off = OFFSETS[from];
+  const base = OFFSETS[from];
+  const off = {
+    x:
+      base.x === undefined
+        ? 0
+        : Math.sign(base.x) * (distance ?? Math.abs(base.x)),
+    y:
+      base.y === undefined
+        ? 0
+        : Math.sign(base.y) * (distance ?? Math.abs(base.y)),
+  };
 
   return (
     <MotionTag
-      initial={{ opacity: 0, x: off.x ?? 0, y: off.y ?? 0 }}
+      initial={{ opacity: 0, x: off.x, y: off.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay }}

@@ -1,9 +1,15 @@
 import type { ExperienceRole } from "@/lib/types";
 import ScrollFadeIn from "./ScrollFadeIn";
 
-function startYear(date: string) {
-  const m = date.match(/\d{4}/);
-  return m ? m[0] : date;
+// Badge shows the role's SPAN, not just its start year — otherwise long
+// continuous roles (e.g. Oct 2022 – Jan 2025) read as a multi-year gap.
+function yearBadge(role: ExperienceRole) {
+  const start = role.startDate.match(/\d{4}/)?.[0];
+  const end = role.endDate.match(/\d{4}/)?.[0];
+  if (!start) return role.startDate;
+  if (/present/i.test(role.endDate)) return `Since ${start}`;
+  if (end && end !== start) return `${start} – ${end}`;
+  return start;
 }
 
 function TimelineCard({ role }: { role: ExperienceRole }) {
@@ -11,7 +17,7 @@ function TimelineCard({ role }: { role: ExperienceRole }) {
     <div>
       {/* Year banner */}
       <div className="inline-flex items-center rounded-sm bg-accent px-3.5 py-1 text-meta font-bold tracking-tight text-ink-dark">
-        {startYear(role.startDate)}
+        {yearBadge(role)}
       </div>
       <div className="glass-panel mt-2.5 rounded-md p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)]">
         <h3 className="text-body font-semibold text-ink transition-colors duration-300 hover:text-accent">{role.company}</h3>
