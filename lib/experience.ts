@@ -8,10 +8,10 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "Maryland Heights, MO",
     bullets: [
-      "Selected for an Enterprise Mobility startup program focused on developing emerging talent in commercial business development, applying strategic thinking and business and customer insight to real-world sales operations.",
-      "Conduct business insight research and competitive analysis in a fast-paced environment while working to identify process gaps, delivering data-backed recommendations that directly inform operational improvements.",
-      "Translate customer insight into targeted prospecting and pipeline development for commercial accounts in the St. Louis market.",
-      "Collaborate cross-functionally to surface inefficiencies and translate business and customer insight into strategic recommendations presented to leadership.",
+      "Lead a team of 10 interns in a startup program marketing Enterprise Mobility's car-sales business to a broader customer network, validating market demand to inform leadership's budget-allocation decisions.",
+      "Presented workflow and process changes to senior leadership that were adopted, streamlining the sales cycle and directly increasing sales by 14%.",
+      "Ranked the program's all-time leader in total customer engagements and a top weekly sales performer, driving outreach and conversion across target segments.",
+      "Track prospecting and pipeline across Salesforce and AWS WorkSpaces, plus a custom CRM tracker I built to monitor engagements and conversion.",
     ],
   },
   {
