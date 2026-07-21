@@ -22,10 +22,10 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "St. Louis, MO",
     bullets: [
-      "Founded Westhird, a digital marketing agency for small businesses and local trades, building custom hand-coded websites and delivering full sites in 7 days starting at $450.",
-      "Execute the complete sales cycle independently: cold outreach, discovery, audit delivery, live demo, and contract close through a structured consultative framework.",
-      "Manage all operations end-to-end including client discovery, pricing strategy, design, development, and post-launch support.",
-      "Build and maintain a pipeline of local business prospects, securing paid contracts through value-first selling and transparent pricing.",
+      "Founded Westhird, a digital marketing agency delivering custom websites, brand strategy, and local search optimization for small businesses and trades — growing client businesses by an average of 10% after launch.",
+      "Ran the full sales funnel solo — prospected a continually growing pipeline of local businesses through discovery calls and demos, converting cold outreach into signed clients within three weeks.",
+      "Delivered campaigns that grew bookings, lead volume, and Google visibility, converting first-time clients into monthly retainers.",
+      "Manage operations end-to-end: client discovery, marketing strategy, design, development, and ongoing performance optimization.",
     ],
   },
   {
