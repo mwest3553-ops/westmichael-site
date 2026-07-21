@@ -20,7 +20,20 @@ function TimelineCard({ role }: { role: ExperienceRole }) {
         {yearBadge(role)}
       </div>
       <div className="glass-panel mt-2.5 rounded-md p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_0_30px_-8px_rgba(245,181,58,0.35)]">
-        <h3 className="text-body font-semibold text-ink transition-colors duration-300 hover:text-accent">{role.company}</h3>
+        <h3 className="text-body font-semibold text-ink transition-colors duration-300 hover:text-accent">
+          {role.url ? (
+            <a
+              href={role.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline decoration-accent/50 underline-offset-4 transition-colors hover:decoration-accent"
+            >
+              {role.company}
+            </a>
+          ) : (
+            role.company
+          )}
+        </h3>
         <p className="mt-0.5 text-meta text-muted">{role.title}</p>
         <p className="mt-0.5 text-xs text-muted">
           {role.startDate} – {role.endDate} · {role.location}

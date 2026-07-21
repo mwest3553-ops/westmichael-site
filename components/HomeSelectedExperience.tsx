@@ -46,7 +46,18 @@ export default function HomeSelectedExperience() {
                   <header className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
                     <div>
                       <h3 className="text-h2 font-bold text-ink transition-colors duration-300 group-hover:text-accent">
-                        {role.company}
+                        {role.url ? (
+                          <a
+                            href={role.url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="underline decoration-accent/50 underline-offset-4 transition-colors hover:decoration-accent"
+                          >
+                            {role.company}
+                          </a>
+                        ) : (
+                          role.company
+                        )}
                       </h3>
                       <p className="mt-2 text-body text-muted">{role.title}</p>
                     </div>

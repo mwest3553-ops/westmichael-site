@@ -28,6 +28,8 @@ export interface BlogPost extends BlogPostMeta {
 
 export interface ExperienceRole {
   company: string;
+  /** Optional external link for the company name (e.g. Westhird → westhird.com). */
+  url?: string;
   title: string;
   startDate: string;
   endDate: string;
@@ -42,6 +44,8 @@ export interface Project {
 
 export interface TimelineEntry {
   institution: string;
+  /** Optional external link for the institution name. */
+  url?: string;
   role: string;
   dates: string;
   location?: string;

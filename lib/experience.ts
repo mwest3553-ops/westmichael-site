@@ -16,6 +16,7 @@ export const experienceRoles: ExperienceRole[] = [
   },
   {
     company: "Westhird",
+    url: "https://westhird.com",
     title: "Founder",
     startDate: "May 2026",
     endDate: "Present",
@@ -91,7 +92,7 @@ export const projects: Project[] = [
   {
     name: "Independent Apparel Brand",
     description:
-      "Founded and operated an apparel brand managing the full business lifecycle. Generated $1,200 in revenue in the first month with no outside investment.",
+      "Founded and operate a self-funded apparel brand end-to-end — design, sourcing, and direct-to-consumer sales — generating four-figure revenue in its first month with no outside investment.",
   },
   {
     name: "AI-Powered Business Tools",
@@ -115,6 +116,7 @@ export const timeline: TimelineEntry[] = [
   },
   {
     institution: "Westhird",
+    url: "https://westhird.com",
     role: "Founder",
     dates: "May 2026–Present",
     location: "St. Louis, MO",

@@ -21,7 +21,18 @@ export default function TimelineList() {
           />
           <div>
             <h3 className="text-h3 font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
-              {entry.institution}
+              {entry.url ? (
+                <a
+                  href={entry.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline decoration-accent/50 underline-offset-4 transition-colors hover:decoration-accent"
+                >
+                  {entry.institution}
+                </a>
+              ) : (
+                entry.institution
+              )}
             </h3>
             <p className="mt-1 text-body text-muted">{entry.role}</p>
             <p className="mt-1 text-meta text-muted">
