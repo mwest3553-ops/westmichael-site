@@ -8,10 +8,10 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "Maryland Heights, MO",
     bullets: [
-      "Lead a team of 10 interns in a startup program marketing Enterprise Mobility's car-sales business to a broader customer network, validating market demand to inform leadership's budget-allocation decisions.",
+      "Collaborated with a team of 10 interns in a startup program marketing Enterprise Mobility's car-sales business to a broader customer network, validating market demand to inform leadership's budget-allocation decisions.",
       "Presented workflow and process changes to senior leadership that were adopted, streamlining the sales cycle and directly increasing sales by 14%.",
-      "Ranked the program's all-time leader in total customer engagements and a top weekly sales performer, driving outreach and conversion across target segments.",
-      "Track prospecting and pipeline across Salesforce and AWS WorkSpaces, plus a custom CRM tracker I built to monitor engagements and conversion.",
+      "Ranked the program's all-time leader in customer engagements and a top weekly sales performer across target segments.",
+      "Manage prospecting and pipeline across Salesforce and AWS WorkSpaces, plus a custom CRM tracker I built to monitor engagements and conversion.",
     ],
   },
   {
@@ -23,7 +23,7 @@ export const experienceRoles: ExperienceRole[] = [
     location: "St. Louis, MO",
     bullets: [
       "Founded Westhird, a digital marketing agency delivering custom websites, brand strategy, and local search optimization for small businesses and trades — growing client businesses by an average of 10% after launch.",
-      "Ran the full sales funnel solo — prospected a continually growing pipeline of local businesses through discovery calls and demos, converting cold outreach into signed clients within three weeks.",
+      "Executed the end-to-end sales funnel solo — prospected a continually growing pipeline of local businesses through discovery calls and demos, converting cold outreach into signed clients within three weeks.",
       "Delivered campaigns that grew bookings, lead volume, and Google visibility, converting first-time clients into monthly retainers.",
       "Manage operations end-to-end: client discovery, marketing strategy, design, development, and ongoing performance optimization.",
     ],
@@ -47,7 +47,8 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "St. Louis, MO",
     bullets: [
-      "Selected to the Marketing and Events Committee of the Young Professionals Board for a St. Louis community development nonprofit, supporting marketing and outreach for local economic development initiatives.",
+      "Selected to the marketing committee of a St. Louis community-development nonprofit advancing equitable community revitalization.",
+      "Developed the board's marketing and communications playbook, messaging guidelines, and brand positioning to grow membership, participation, and community partnerships.",
     ],
   },
   {

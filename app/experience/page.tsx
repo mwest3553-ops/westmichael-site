@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { experienceRoles, projects } from "@/lib/experience";
+import { experienceRoles } from "@/lib/experience";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
-import ExperienceItem from "@/components/ExperienceItem";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 import AnimatedStripe from "@/components/AnimatedStripe";
 import FloatingOrbs from "@/components/FloatingOrbs";
 
-const VOLUNTEER_COMPANIES = [
+// Rise + SLPS render in the light "Projects & Leadership" section, and are
+// kept out of the dark Roles timeline.
+const LEADERSHIP_COMPANIES = [
   "Rise Community Development",
   "Saint Louis Public Schools",
 ];
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   const roles = experienceRoles.filter(
-    (r) => !VOLUNTEER_COMPANIES.includes(r.company)
+    (r) => !LEADERSHIP_COMPANIES.includes(r.company)
   );
-  const volunteering = experienceRoles.filter((r) =>
-    VOLUNTEER_COMPANIES.includes(r.company)
+  const leadership = experienceRoles.filter((r) =>
+    LEADERSHIP_COMPANIES.includes(r.company)
   );
 
   return (
@@ -82,45 +83,52 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="bg-bg pb-20 md:pb-24">
-        <div className="mx-auto max-w-prose px-6">
-          <ScrollFadeIn>
-            <h2 className="text-h2 font-bold text-sheen">Volunteering</h2>
-          </ScrollFadeIn>
-          <div className="mt-8 space-y-12">
-            {volunteering.map((role, i) => (
-              <ExperienceItem
-                key={role.company + i}
-                role={role}
-                index={i}
-                from={i % 2 === 0 ? "left" : "right"}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section-light border-y border-border-light py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <ScrollFadeIn>
             <p className="flex items-center gap-2.5 text-kicker uppercase text-accent-deep">
-              Projects
+              Projects &amp; Leadership
               <span className="h-px w-5 bg-accent-deep/40" aria-hidden="true" />
             </p>
             <h2 className="mt-5 text-h2 font-bold text-ink-dark md:text-page-h1">
-              Selected work.
+              Beyond the day-to-day.
             </h2>
           </ScrollFadeIn>
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {projects.map((project, i) => (
-              <ScrollFadeIn key={project.name} delay={i * 0.04}>
-                <article className="lift-card group h-full rounded-md border border-border-light bg-white p-6 shadow-sm hover:border-accent/60 md:p-8">
-                  <h3 className="text-h3 font-semibold text-ink-dark transition-colors duration-300 group-hover:text-accent-deep">
-                    {project.name}
-                  </h3>
-                  <p className="mt-3 text-body text-muted-light">
-                    {project.description}
-                  </p>
+            {leadership.map((role, i) => (
+              <ScrollFadeIn
+                key={role.company + i}
+                delay={i * 0.04}
+                from={i % 2 === 0 ? "left" : "right"}
+              >
+                <article className="lift-card group flex h-full flex-col rounded-md border border-border-light bg-white p-6 shadow-sm hover:border-accent/60 md:p-8">
+                  <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+                    <div>
+                      <h3 className="text-h3 font-semibold text-ink-dark transition-colors duration-300 group-hover:text-accent-deep">
+                        {role.company}
+                      </h3>
+                      <p className="mt-1 text-meta text-muted-light">
+                        {role.title}
+                      </p>
+                    </div>
+                    <p className="shrink-0 text-meta text-muted-light md:pl-4 md:text-right">
+                      {role.startDate} – {role.endDate}
+                    </p>
+                  </div>
+                  <ul className="mt-4 space-y-2">
+                    {role.bullets.map((bullet, j) => (
+                      <li
+                        key={j}
+                        className="flex gap-2.5 text-body text-muted-light"
+                      >
+                        <span
+                          className="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-accent-deep"
+                          aria-hidden="true"
+                        />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               </ScrollFadeIn>
             ))}
