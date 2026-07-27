@@ -162,17 +162,12 @@ export const timeline: TimelineEntry[] = [
 // Skills in Michael's order. category "business" renders under "Professional",
 // "tech" under "Technical" (see HomeSkills.tsx / about/page.tsx CategoryHeader).
 export const skills: SkillTag[] = [
-  // Professional
-  { label: "Business Development", category: "business" },
-  { label: "B2B Sales", category: "business" },
-  { label: "Lead Generation", category: "business" },
-  { label: "Pipeline Management", category: "business" },
-  { label: "Account Management", category: "business" },
-  { label: "Market Research", category: "business" },
+  // Professional — marketing-first
   { label: "Marketing Strategy", category: "business" },
   { label: "Brand Positioning", category: "business" },
-  { label: "Cold Outreach", category: "business" },
-  { label: "Negotiation", category: "business" },
+  { label: "Market Research", category: "business" },
+  { label: "Lead Generation", category: "business" },
+  { label: "Business Development", category: "business" },
   { label: "Client Relations", category: "business" },
   { label: "Project Management", category: "business" },
   { label: "Leadership", category: "business" },
