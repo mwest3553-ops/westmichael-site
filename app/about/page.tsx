@@ -125,7 +125,7 @@ export default async function AboutPage() {
 
           <ScrollFadeIn delay={0.05}>
             <div className="mt-12">
-              <CategoryHeader label="Business" count={businessSkills.length} />
+              <CategoryHeader label="Professional" count={businessSkills.length} />
               <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {businessSkills.map((skill) => (
                   <SkillBox key={skill.label} skill={skill} />
@@ -136,7 +136,7 @@ export default async function AboutPage() {
 
           <ScrollFadeIn delay={0.1}>
             <div className="mt-12">
-              <CategoryHeader label="Tech" count={techSkills.length} />
+              <CategoryHeader label="Technical" count={techSkills.length} />
               <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {techSkills.map((skill) => (
                   <SkillBox key={skill.label} skill={skill} />

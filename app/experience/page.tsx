@@ -9,6 +9,7 @@ import FloatingOrbs from "@/components/FloatingOrbs";
 // kept out of the dark Roles timeline.
 const LEADERSHIP_COMPANIES = [
   "Rise Community Development",
+  "Keller Joseph Capital",
   "Saint Louis Public Schools",
 ];
 
@@ -95,11 +96,14 @@ export default function ExperiencePage() {
             </h2>
           </ScrollFadeIn>
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {leadership.map((role, i) => (
+            {leadership.map((role, i) => {
+              const isWide = role.company === "Saint Louis Public Schools";
+              return (
               <ScrollFadeIn
                 key={role.company + i}
                 delay={i * 0.04}
-                from={i % 2 === 0 ? "left" : "right"}
+                from={isWide ? "up" : i % 2 === 0 ? "left" : "right"}
+                className={isWide ? "md:col-span-2" : undefined}
               >
                 <article className="lift-card group flex h-full flex-col rounded-md border border-border-light bg-white p-6 shadow-sm hover:border-accent/60 md:p-8">
                   <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
@@ -131,7 +135,8 @@ export default function ExperiencePage() {
                   </ul>
                 </article>
               </ScrollFadeIn>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

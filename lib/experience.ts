@@ -10,8 +10,8 @@ export const experienceRoles: ExperienceRole[] = [
     bullets: [
       "Collaborated with a team of 10 interns in a startup program marketing Enterprise Mobility's car-sales business to a broader customer network, validating market demand to inform leadership's budget-allocation decisions.",
       "Presented workflow and process changes to senior leadership that were adopted, streamlining the sales cycle and directly increasing sales by 14%.",
-      "Ranked the program's all-time leader in customer engagements and a top weekly sales performer across target segments.",
-      "Manage prospecting and pipeline across Salesforce and AWS WorkSpaces, plus a custom CRM tracker I built to monitor engagements and conversion.",
+      "Ranked #1 out of 10 interns for all-time customer engagements, averaging 700+ weekly touchpoints across target segments.",
+      "Manage prospecting and pipeline across Salesforce, AWS WorkSpaces, and a custom CRM tracker I built to monitor engagements and conversion.",
     ],
   },
   {
@@ -22,9 +22,9 @@ export const experienceRoles: ExperienceRole[] = [
     endDate: "Present",
     location: "St. Louis, MO",
     bullets: [
-      "Founded Westhird, a digital marketing agency delivering custom websites, brand strategy, and local search optimization for small businesses and trades — growing client businesses by an average of 10% after launch.",
-      "Executed the end-to-end sales funnel solo — prospected a continually growing pipeline of local businesses through discovery calls and demos, converting cold outreach into signed clients within three weeks.",
-      "Delivered campaigns that grew bookings, lead volume, and Google visibility, converting first-time clients into monthly retainers.",
+      "Founded Westhird, a digital marketing agency delivering custom websites, brand strategy, and local search optimization for small businesses and trades — growing client organic web traffic by an average of 10% after launch.",
+      "Execute the end-to-end sales funnel solo — prospecting a continually growing pipeline of local businesses and converting cold outreach into 4 signed clients within three weeks.",
+      "Deliver campaigns that grow bookings, lead volume, and Google visibility, converting first-time clients into recurring monthly retainers.",
       "Manage operations end-to-end: client discovery, marketing strategy, design, development, and ongoing performance optimization.",
     ],
   },
@@ -49,6 +49,17 @@ export const experienceRoles: ExperienceRole[] = [
     bullets: [
       "Selected to the marketing committee of a St. Louis community-development nonprofit advancing equitable community revitalization.",
       "Developed the board's marketing and communications playbook, messaging guidelines, and brand positioning to grow membership, participation, and community partnerships.",
+    ],
+  },
+  {
+    company: "Keller Joseph Capital",
+    title: "Co-Founder/Partner & Marketing Lead",
+    startDate: "Jun 2026",
+    endDate: "Present",
+    location: "St. Louis, MO",
+    bullets: [
+      "Co-founded a private investment partnership; built the fund's website and a custom app tracker used to research and develop investment strategies for stronger ROI.",
+      "Contribute to market research and portfolio strategy targeting specific return objectives — the fund has outperformed the S&P 500 and Nasdaq on total return since inception.",
     ],
   },
   {
@@ -148,25 +159,34 @@ export const timeline: TimelineEntry[] = [
   },
 ];
 
-// Skills ordered with most important first within each category.
-// Business category emphasizes commercial work; Tech category emphasizes practical tooling.
+// Skills in Michael's order. category "business" renders under "Professional",
+// "tech" under "Technical" (see HomeSkills.tsx / about/page.tsx CategoryHeader).
 export const skills: SkillTag[] = [
-  // Business — ordered per Michael's spec
+  // Professional
   { label: "Business Development", category: "business" },
-  { label: "Sales and Marketing", category: "business" },
-  { label: "Team Leadership", category: "business" },
-  { label: "Strategic Thinking", category: "business" },
-  { label: "Marketing Insights", category: "business" },
-  { label: "Customer Research", category: "business" },
-  { label: "CRM", category: "business" },
-  { label: "Competitive Analysis", category: "business" },
+  { label: "B2B Sales", category: "business" },
+  { label: "Lead Generation", category: "business" },
+  { label: "Pipeline Management", category: "business" },
+  { label: "Account Management", category: "business" },
+  { label: "Market Research", category: "business" },
+  { label: "Marketing Strategy", category: "business" },
+  { label: "Brand Positioning", category: "business" },
+  { label: "Cold Outreach", category: "business" },
+  { label: "Negotiation", category: "business" },
+  { label: "Client Relations", category: "business" },
+  { label: "Project Management", category: "business" },
+  { label: "Leadership", category: "business" },
 
-  // Tech — certified credentials first, then others by importance
-  { label: "Excel", certified: true, category: "tech" },
+  // Technical
   { label: "Google Analytics", certified: true, category: "tech" },
-  { label: "AI Tools", category: "tech" },
-  { label: "Web Design", category: "tech" },
+  { label: "Salesforce & CRM Tools", category: "tech" },
+  { label: "Microsoft Excel", certified: true, category: "tech" },
   { label: "Data Analysis", category: "tech" },
+  { label: "SEO & Local Search", category: "tech" },
+  { label: "Email & Social Media Marketing", category: "tech" },
+  { label: "PowerPoint", category: "tech" },
+  { label: "Word", category: "tech" },
+  { label: "AI Application Development", category: "tech" },
 ];
 
 export const businessSkills = skills.filter((s) => s.category === "business");
