@@ -179,8 +179,8 @@ export const skills: SkillTag[] = [
 
   // Technical
   { label: "Google Analytics", certified: true, category: "tech" },
-  { label: "Salesforce & CRM Tools", category: "tech" },
   { label: "Microsoft Excel", certified: true, category: "tech" },
+  { label: "Salesforce & CRM Tools", category: "tech" },
   { label: "Data Analysis", category: "tech" },
   { label: "SEO & Local Search", category: "tech" },
   { label: "Email & Social Media Marketing", category: "tech" },
