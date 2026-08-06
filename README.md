@@ -25,6 +25,19 @@ Netlify: add these in **Site Settings → Environment Variables**:
 
 The `SANITY_API_TOKEN` is only needed for server-side mutations (not required for the public site to work).
 
+## Restoring / running from scratch
+
+Everything needed to **build** the site is in this repo — all code, styles, config, and static assets (fonts, images, and the résumé PDF). A few things it needs to **operate** live outside git, on purpose:
+
+| Not in the repo | Where it lives | How to restore |
+| --- | --- | --- |
+| Secrets / env vars | your local `.env.local` + Netlify → Environment Variables | copy `.env.local.example` → `.env.local` and fill in the Sanity values (the API token is regenerable in Sanity → API → Tokens) |
+| Blog posts | Sanity's cloud (not the repo) | already there — edit at `/studio` |
+| `node_modules` | not tracked | `pnpm install` (rebuilt from the lockfile) |
+| Hosting + domain | Netlify + Namecheap DNS | see "Deploying to Netlify" below |
+
+**Clone → running:** `pnpm install` → create `.env.local` with the four Sanity vars → `pnpm dev`. Every page works without Sanity except `/blog` (which needs the CMS connection).
+
 ## Editing content
 
 ### Writing blog posts
@@ -59,7 +72,7 @@ Edit `lib/experience.ts`. Arrays: `experienceRoles`, `projects`, `timeline`, plu
 
 ### Replacing the resume PDF
 
-Replace `public/resume.pdf` with your actual PDF before pushing. The placeholder is empty.
+Replace `public/Michael-A-West-III-Resume.pdf` with the new file — **keep the same filename**, since the "Download Resume" button links to that exact path.
 
 ## Stack
 
@@ -78,7 +91,8 @@ components/      UI components
 content/         About markdown (blog content lives in Sanity)
 lib/             Site config, blog loader, experience data, types
 sanity/          Schema definitions, GROQ queries, Sanity clients
-public/          Static assets (images, resume.pdf)
+public/          Static assets (fonts, images, Michael-A-West-III-Resume.pdf)
+app/icon.svg      Favicon (MW badge)
 netlify.toml     Build + hosting config
 sanity.config.ts Sanity Studio configuration
 ```
