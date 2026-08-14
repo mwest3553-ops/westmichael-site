@@ -17,10 +17,10 @@ interface ScrollFadeInProps {
 }
 
 const OFFSETS: Record<Direction, { x?: number; y?: number }> = {
-  up: { y: 80 },
-  down: { y: -80 },
-  left: { x: -110 },
-  right: { x: 110 },
+  up: { y: 24 },
+  down: { y: -24 },
+  left: { x: -32 },
+  right: { x: 32 },
 };
 
 /**
@@ -71,7 +71,7 @@ export default function ScrollFadeIn({
       initial={{ opacity: 0, x: off.x, y: off.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay }}
       className={className}
     >
       {children}

@@ -17,13 +17,11 @@ export default function Template({ children }: { children: ReactNode }) {
   return (
     <motion.div
       key={usePathname()}
-      initial={
-        prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: 24 }
-      }
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
-        duration: prefersReducedMotion ? 0.2 : 0.45,
-        ease: [0.16, 1, 0.3, 1],
+        duration: prefersReducedMotion ? 0.1 : 0.18,
+        ease: "easeOut",
       }}
     >
       {children}

@@ -7,7 +7,7 @@ import FloatingOrbs from "@/components/FloatingOrbs";
 
 const POSTS_PER_PAGE = 6;
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Blog",

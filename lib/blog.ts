@@ -32,7 +32,9 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
   return sanityClient.fetch<BlogPostMeta[]>(
     allPostsQuery,
     {},
-    { cache: "no-store" }
+    // Cache the CMS response and refresh it every 5 min (ISR) instead of
+    // hitting Sanity on every request — keeps the blog fast.
+    { next: { revalidate: 300 } }
   );
 }
 
