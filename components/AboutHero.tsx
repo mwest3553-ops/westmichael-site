@@ -105,7 +105,7 @@ export default function AboutHero() {
                 fill
                 sizes="88px"
                 className="object-cover"
-                style={{ objectPosition: "50% 30%" }}
+                style={{ objectPosition: "50% 22%" }}
                 priority
               />
             </div>

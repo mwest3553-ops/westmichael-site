@@ -1,7 +1,9 @@
-Driven by curiosity and a bias for action, I build things that connect people to what they need. I look at every project as a personal test kitchen—a way to challenge myself, experiment, and build hands-on experience in the marketing field.
+Driven by curiosity and a bias for action, I build things that connect people to what they need. I treat every project as a personal test kitchen, a way to challenge myself, experiment, and build real experience in the marketing field.
 
-Currently, I run Westhird, a digital marketing agency that helps local trades and small businesses own their space online. Alongside managing the agency, I have taken AI-powered tools from concept to working prototype, balanced part-time work throughout my college career, and launched an independent apparel brand that generated four-figure revenue in its first month.
+I study Marketing and Psychology at Saint Louis University, in the Richard A. Chaifetz School of Business, and I run [Westhird](https://westhird.com), a digital marketing agency helping local trades and small businesses own their space online.
 
-Community and connection are at the heart of everything I do; I have spent over two years mentoring youth and currently serve on a regional economic development board supporting local growth. Outside of work, I am a dedicated family man who is always finding ways to support and show up for the people closest to me.
+What ties that together is a habit rather than a job title: write down what you notice, then turn it into something someone can act on. It is also why the psychology half of my degree matters as much as the marketing half. Campaigns work because of how people decide, not because of the tactic.
 
-As an aspiring marketing professional, the ultimate through-line for me is people. Whether I am collaborating with a client, a neighbor, or a student, the goal is always the same: understand what drives them and help them get where they want to go.
+Community and connection are at the heart of everything I do. I have spent over two years mentoring youth, and I serve on the Rise Young Professionals marketing committee supporting local growth. Outside of work I am a dedicated family man, always finding ways to show up for the people closest to me.
+
+The through-line is people. Whether I am working with a client, a partner, or a peer, the goal is the same: understand what drives them, and help them get where they want to go.
