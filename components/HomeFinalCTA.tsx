@@ -18,7 +18,7 @@ export default function HomeFinalCTA() {
           </p>
         </ScrollFadeIn>
         <ScrollFadeIn delay={0.05}>
-          <h2 className="mt-5 max-w-3xl text-page-h1-mobile text-balance text-sheen md:text-display">
+          <h2 className="mt-5 max-w-5xl text-page-h1-mobile text-pretty text-sheen md:text-page-h1">
             Let&apos;s build something useful.
           </h2>
         </ScrollFadeIn>
