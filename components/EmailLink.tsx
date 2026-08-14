@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { siteConfig } from "@/lib/config";
+import { track } from "@/lib/analytics";
 
 interface EmailLinkProps {
   className?: string;
@@ -22,6 +23,7 @@ export default function EmailLink({ className, label }: EmailLinkProps) {
   const [copied, setCopied] = useState(false);
 
   const handleClick = () => {
+    track("contact_click", { method: "email" });
     // Do not preventDefault — let mailto try to open.
     // Also copy to clipboard as a fallback.
     if (typeof navigator !== "undefined" && navigator.clipboard) {
