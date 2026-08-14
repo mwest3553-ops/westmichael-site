@@ -6,7 +6,7 @@ import { workItems } from "@/lib/work";
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ["", "/about", "/experience", "/work", "/lab", "/blog", "/contact"].map(
+  const staticRoutes = ["", "/about", "/experience", "/work", "/blog", "/contact"].map(
     (route) => ({
       url: `${siteConfig.url}${route}`,
       lastModified: new Date(),

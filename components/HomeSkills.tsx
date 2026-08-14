@@ -1,45 +1,11 @@
-import { businessSkills, techSkills, skills } from "@/lib/experience";
-import type { SkillTag } from "@/lib/types";
 import ScrollFadeIn from "./ScrollFadeIn";
+import { skillCategories } from "@/lib/skills";
 
-function SkillBox({ skill }: { skill: SkillTag }) {
-  if (skill.certified) {
-    return (
-      <li className="flex min-h-[3.75rem] items-center justify-center gap-2 rounded-md border border-accent bg-accent px-4 py-3 text-center text-meta font-semibold leading-snug text-ink-dark shadow-[0_10px_24px_-12px_rgba(245,181,58,0.75)] transition-transform duration-300 hover:-translate-y-1">
-        <span aria-hidden="true" className="text-sm">
-          ★
-        </span>
-        <span>{skill.label}</span>
-      </li>
-    );
-  }
-  return (
-    <li className="skill-chip flex min-h-[3.75rem] items-center justify-center rounded-md border border-border-light bg-white px-4 py-3 text-center text-meta font-medium leading-snug text-ink-dark shadow-sm">
-      <span className="relative z-[1]">{skill.label}</span>
-    </li>
-  );
-}
-
-function CategoryHeader({ label, count }: { label: string; count: number }) {
-  return (
-    <div className="flex items-center gap-3">
-      <h3 className="text-kicker uppercase text-muted-light">{label}</h3>
-      <span className="font-mono text-xs text-muted-dark">
-        {String(count).padStart(2, "0")}
-      </span>
-      <span className="h-px flex-1 bg-border-light" aria-hidden="true" />
-    </div>
-  );
-}
-
+// Interactive skills → projects. Each skill expands to the roles that prove
+// it. Native <details>/<summary>, no client JS. Matches the design mockup.
 export default function HomeSkills() {
-  const hasCertified = skills.some((s) => s.certified);
-
   return (
-    <section
-      id="skills"
-      className="section-light-alt scroll-anchor py-20 md:py-32"
-    >
+    <section id="skills" className="section-light-alt scroll-anchor py-20 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <ScrollFadeIn>
           <p className="flex items-center gap-2.5 text-kicker uppercase text-accent-deep">
@@ -53,39 +19,69 @@ export default function HomeSkills() {
             Built, tested, learned.
           </h2>
         </ScrollFadeIn>
-
-        <ScrollFadeIn delay={0.1}>
-          <div className="mt-14">
-            <CategoryHeader label="Professional" count={businessSkills.length} />
-            <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {businessSkills.map((skill) => (
-                <SkillBox key={skill.label} skill={skill} />
-              ))}
-            </ul>
-          </div>
+        <ScrollFadeIn delay={0.08}>
+          <p className="mt-4 max-w-xl text-body text-muted-dark">
+            Tap any skill to see where I&apos;ve done it.
+          </p>
         </ScrollFadeIn>
 
-        <ScrollFadeIn delay={0.15}>
-          <div className="mt-12">
-            <CategoryHeader label="Technical" count={techSkills.length} />
-            <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {techSkills.map((skill) => (
-                <SkillBox key={skill.label} skill={skill} />
-              ))}
-            </ul>
-          </div>
-        </ScrollFadeIn>
+        {skillCategories.map((cat, ci) => (
+          <ScrollFadeIn key={cat.label} delay={0.1 + ci * 0.04}>
+            <div className="mt-10">
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-light">
+                  {cat.label}
+                </span>
+                <span className="h-px flex-1" style={{ background: "#E0D9C8" }} aria-hidden="true" />
+                <span className="font-mono text-[11px] text-muted-light">
+                  {String(cat.skills.length).padStart(2, "0")}
+                </span>
+              </div>
 
-        {hasCertified && (
-          <ScrollFadeIn delay={0.2}>
-            <p className="mt-8 flex items-center gap-2 text-xs text-muted-light">
-              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] text-ink-dark">
-                ★
-              </span>
-              Gold badge indicates a certified skill
-            </p>
+              <div className="mt-4 flex flex-wrap items-start gap-2.5">
+                {cat.skills.map((s) => (
+                  <details
+                    key={s.label}
+                    className="sk-details"
+                    style={{
+                      border: s.certified ? "1px solid #E3C078" : "1px solid #DDD5C2",
+                      background: s.certified ? "rgba(245,181,58,0.16)" : "#FAF7F0",
+                    }}
+                  >
+                    <summary className="flex items-center gap-2.5 px-[15px] py-3 text-[15px] font-medium text-ink-dark">
+                      {s.label}
+                      {s.certified && (
+                        <span
+                          className="font-mono text-[9px] font-semibold"
+                          style={{ background: "#F5B53A", color: "#0A1628", padding: "4px 6px" }}
+                        >
+                          CERT
+                        </span>
+                      )}
+                      <span className="sk-plus font-mono text-sm" style={{ color: "#A39B88" }}>
+                        +
+                      </span>
+                    </summary>
+                    <div
+                      className="flex flex-wrap gap-[7px] px-[15px] py-[13px]"
+                      style={{ background: "#0A1628" }}
+                    >
+                      {s.orgs.map((o) => (
+                        <span
+                          key={o}
+                          className="font-mono text-[11px]"
+                          style={{ color: "#FAF7F0", border: "1px solid #33456A", padding: "6px 9px" }}
+                        >
+                          {o}
+                        </span>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
           </ScrollFadeIn>
-        )}
+        ))}
       </div>
     </section>
   );

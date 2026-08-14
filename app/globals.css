@@ -198,3 +198,26 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Interactive skills accordion (home #skills) — native <details> so it works
+   without JS. Closed = cream/gold chip; open = the summary + panel go dark. */
+.sk-details > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+.sk-details > summary::-webkit-details-marker {
+  display: none;
+}
+.sk-details .sk-plus {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sk-details[open] > summary {
+  background: #0a1628 !important;
+  border-color: #0a1628 !important;
+  color: #faf7f0 !important;
+}
+.sk-details[open] > summary .sk-plus {
+  transform: rotate(45deg);
+  color: #f5b53a;
+}
