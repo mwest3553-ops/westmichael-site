@@ -2,8 +2,13 @@ import Link from "next/link";
 import { experienceRoles } from "@/lib/experience";
 import ScrollFadeIn from "./ScrollFadeIn";
 
+// What I'm doing now — current, ongoing roles (Enterprise internship has ended).
+const FEATURED = ["Westhird", "Rise Community Development", "The Gatesworth"];
+
 export default function HomeSelectedExperience() {
-  const selected = experienceRoles.slice(0, 3);
+  const selected = FEATURED.map((name) =>
+    experienceRoles.find((r) => r.company === name)
+  ).filter((r): r is (typeof experienceRoles)[number] => Boolean(r));
 
   return (
     <section
@@ -20,7 +25,7 @@ export default function HomeSelectedExperience() {
                 Selected Experience
               </p>
               <h2 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
-                Work that moved the number.
+                What I&apos;m doing now.
               </h2>
             </div>
             <Link
