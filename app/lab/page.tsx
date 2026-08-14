@@ -45,8 +45,8 @@ export default function LabPage() {
             <BehaviorLab />
           </ScrollFadeIn>
           <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-light">
-            One principle, demonstrated honestly. No data is stored — the whole thing runs in your
-            browser.
+            One principle, demonstrated honestly. Your guess is added anonymously to a running tally —
+            just a number and which anchor you saw, nothing personal.
           </p>
         </div>
       </section>
