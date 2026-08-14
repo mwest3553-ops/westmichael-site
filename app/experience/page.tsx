@@ -47,7 +47,7 @@ export default function ExperiencePage() {
               <ScrollFadeIn delay={0.05}>
                 <a
                   href="/Michael-A-West-III-Resume.pdf"
-                  download="Michael A. West III - Resume.pdf"
+                  download="Michael A West III Resume.pdf"
                   className="btn-sheen group mt-8 inline-flex items-center gap-2 rounded-sm bg-accent px-6 py-3 text-meta font-semibold text-ink-dark transition-colors hover:bg-accent-hover"
                 >
                   <svg
