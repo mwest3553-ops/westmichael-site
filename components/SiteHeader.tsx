@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import NavMenu from "./NavMenu";
 
@@ -58,6 +59,14 @@ export default function SiteHeader() {
           href="/"
           className="flex shrink-0 items-center gap-2.5 whitespace-nowrap text-meta font-semibold tracking-tight text-ink transition-colors hover:text-accent"
         >
+          <Image
+            src="/images/brand/logo-mark.png"
+            alt="Michael A. West III monogram"
+            width={30}
+            height={30}
+            priority
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-6" : "h-7"}`}
+          />
           <span
             className={`inline-block w-0.5 bg-accent transition-all duration-300 ${
               scrolled ? "h-3.5" : "h-4"
