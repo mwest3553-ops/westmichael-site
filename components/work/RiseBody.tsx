@@ -198,7 +198,26 @@ export default function RiseBody() {
         </p>
       </Section>
 
-      <Section num="06 · What it shows" title="Written to the constraints of a volunteer board">
+      <Section
+        num="06 · Why I am on the board"
+        title="No authority, so the work has to be easy to say yes to"
+      >
+        <p className="cs-body">
+          A volunteer board cannot assign anyone anything. Nobody on it reports to anyone else,
+          sponsors owe it nothing, and reporters have no reason to answer. Everything in this plan
+          gets done because someone chooses to do it, which is why the share kit is two minutes long,
+          the copy is pre-written, and the ask to a sponsor is short and specific.
+        </p>
+        <p className="cs-body">
+          That is the part of the work I care about. Marketing inside a company has a budget and a
+          mandate behind it. On a volunteer board there is neither, so the only thing that moves
+          people is whether you have made the next step obvious and worth their time. Writing to that
+          constraint is closer to how most persuasion actually works than any campaign with money
+          behind it.
+        </p>
+      </Section>
+
+      <Section num="07 · What it shows" title="Written to the constraints of a volunteer board">
         <p className="cs-body">
           The plan was written for a group of unpaid volunteers with day jobs, so scope was cut, the
           copy was pre-written, and the measurement was kept small enough to collect. Those

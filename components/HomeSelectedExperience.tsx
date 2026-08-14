@@ -20,7 +20,7 @@ export default function HomeSelectedExperience() {
                 Selected Experience
               </p>
               <h2 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
-                What I'm doing now.
+                Work that moved the number.
               </h2>
             </div>
             <Link

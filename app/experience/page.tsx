@@ -41,7 +41,7 @@ export default function ExperiencePage() {
                   <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
                 </p>
                 <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
-                  The full résumé.
+                  The work behind the résumé.
                 </h1>
               </ScrollFadeIn>
               <ScrollFadeIn delay={0.05}>

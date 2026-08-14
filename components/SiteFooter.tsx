@@ -39,7 +39,7 @@ export default function SiteFooter() {
             rel="noreferrer noopener"
             className="group inline-flex items-center gap-2 text-meta text-muted transition-colors hover:text-ink"
           >
-            <span>Powered by</span>
+            <span>Designed and built by Michael West through</span>
             <Image
               src="/images/westhird-logo.png"
               alt="Westhird"

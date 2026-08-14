@@ -50,7 +50,7 @@ export default function HomeSkills() {
         </ScrollFadeIn>
         <ScrollFadeIn delay={0.05}>
           <h2 className="mt-5 max-w-3xl text-page-h1-mobile text-balance text-ink-dark md:text-page-h1">
-            What I bring to the table.
+            Built, tested, learned.
           </h2>
         </ScrollFadeIn>
 
