@@ -181,7 +181,6 @@ export const skills: SkillTag[] = [
   { label: "Email & Social Media Marketing", category: "tech" },
   { label: "PowerPoint", category: "tech" },
   { label: "Word", category: "tech" },
-  { label: "AI Application Development", category: "tech" },
 ];
 
 export const businessSkills = skills.filter((s) => s.category === "business");

@@ -12,6 +12,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Ideas I'm pressure-testing — short, specific notes by Michael A. West III.",
+  alternates: { canonical: "/blog" },
 };
 
 export default async function BlogIndexPage({

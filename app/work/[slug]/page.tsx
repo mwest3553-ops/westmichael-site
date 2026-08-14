@@ -28,6 +28,7 @@ export function generateMetadata({ params }: WorkPageProps): Metadata {
   return {
     title: item.seoTitle,
     description: item.seoDesc,
+    alternates: { canonical: `/work/${item.slug}` },
     openGraph: {
       title: `${item.seoTitle} — ${siteConfig.name}`,
       description: item.seoDesc,

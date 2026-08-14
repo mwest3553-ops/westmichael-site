@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Experience",
   description:
     "Professional experience and projects by Michael West III — Enterprise Mobility, Westhird, The Gatesworth, and more.",
+  alternates: { canonical: "/experience" },
 };
 
 export default function ExperiencePage() {

@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/config";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import BackToTop from "@/components/BackToTop";
+import PersonJsonLd from "@/components/PersonJsonLd";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -73,6 +74,7 @@ export default function RootLayout({
           <SiteFooter />
         </div>
         <BackToTop />
+        <PersonJsonLd />
       </body>
     </html>
   );

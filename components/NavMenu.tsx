@@ -154,6 +154,7 @@ export default function NavMenu({ items }: NavMenuProps) {
                       <Link
                         href={item.href}
                         onClick={() => setOpen(false)}
+                        aria-current={active ? "page" : undefined}
                         className="group flex items-center gap-5 py-3 md:py-4"
                       >
                         <span

@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
 
-// position biases the object-cover crop so faces stay in frame
+// position biases the object-cover crop so faces stay in frame.
+// TODO: replace each `alt` with a specific description of that photo
+// (who/where/what) for stronger accessibility + image SEO.
 const slideshowImages = [
-  { src: "/images/about/01.jpg", position: "50% 25%" },
-  { src: "/images/about/02.jpg", position: "50% 50%" },
-  { src: "/images/about/03.jpg", position: "50% 50%" },
-  { src: "/images/about/04.jpg", position: "50% 50%" },
+  { src: "/images/about/01.jpg", position: "50% 25%", alt: "Michael A. West III" },
+  { src: "/images/about/02.jpg", position: "50% 50%", alt: "Michael A. West III" },
+  { src: "/images/about/03.jpg", position: "50% 50%", alt: "Michael A. West III" },
+  { src: "/images/about/04.jpg", position: "50% 50%", alt: "Michael A. West III" },
 ];
 
 const INTERVAL_MS = 5000;
@@ -46,7 +48,7 @@ export default function AboutHero() {
           >
             <Image
               src={img.src}
-              alt=""
+              alt={img.alt}
               fill
               sizes="(max-width: 768px) 100vw, 768px"
               priority

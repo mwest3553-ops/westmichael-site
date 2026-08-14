@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Michael A. West III — pursuing a B.S. in Marketing and Psychology at Saint Louis University. Founder of Westhird.",
+  alternates: { canonical: "/about" },
 };
 
 async function getAboutHtml() {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Selected marketing work by Michael A. West III — brand and web for a private investment group, a self-initiated channel strategy at Enterprise Mobility, a nonprofit earned-media plan, and a consumer-psychology spec teardown.",
+  alternates: { canonical: "/work" },
 };
 
 function CardVisual({ slug }: { slug: string }) {
