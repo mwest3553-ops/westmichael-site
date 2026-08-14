@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Ideas I'm pressure-testing — short, specific notes by Michael A. West III.",
+  description: "Essays and notes by Michael A. West III.",
   alternates: { canonical: "/blog" },
 };
 
@@ -40,7 +40,7 @@ export default async function BlogIndexPage({
                   <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
                 </p>
                 <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
-                  Ideas I&apos;m pressure-testing.
+                  Essays and notes.
                 </h1>
               </ScrollFadeIn>
             </div>
