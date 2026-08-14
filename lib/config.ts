@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Michael A. West III — pursuing a B.S. in Marketing and Psychology at Saint Louis University. Business development at Enterprise Mobility, founder of Westhird. Online résumé and blog.",
   url: "https://westmichael.com",
-  email: "3westm@gmail.com",
+  email: "michael@westmichael.com",
   linkedIn: "https://www.linkedin.com/in/mwest3/",
   ogImage: "/images/og-default.png",
   twitterHandle: "",
