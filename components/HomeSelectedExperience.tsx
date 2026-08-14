@@ -3,7 +3,7 @@ import { experienceRoles } from "@/lib/experience";
 import ScrollFadeIn from "./ScrollFadeIn";
 
 // What I'm doing now — current, ongoing roles (Enterprise internship has ended).
-const FEATURED = ["Westhird", "Rise Community Development", "The Gatesworth"];
+const FEATURED = ["Westhird", "Rise Young Professionals Board", "The Gatesworth"];
 
 export default function HomeSelectedExperience() {
   const selected = FEATURED.map((name) =>
