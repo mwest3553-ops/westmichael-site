@@ -19,7 +19,7 @@ function pick(names: string[]): ExperienceRole[] {
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Professional experience by Michael A. West III — Westhird, Enterprise Mobility, Keller Joseph Capital, the Rise YP Board, and more.",
+    "Professional experience by Michael A. West III: Westhird, Enterprise Mobility, Keller Joseph Capital, the Rise YP Board, and more.",
   alternates: { canonical: "/experience" },
 };
 

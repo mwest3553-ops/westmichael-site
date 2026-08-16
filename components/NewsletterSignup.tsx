@@ -18,7 +18,7 @@ export default function NewsletterSignup() {
       <p className="mt-2 text-meta text-muted">Get new posts in your inbox.</p>
       {submitted ? (
         <p className="mt-5 text-meta text-accent">
-          Thanks — this is a placeholder UI; wire it to Mailchimp or Resend when you're ready.
+          Thanks! This is a placeholder UI; wire it to Mailchimp or Resend when you're ready.
         </p>
       ) : (
         <form

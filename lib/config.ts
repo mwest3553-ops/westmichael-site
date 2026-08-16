@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Michael A. West III",
   tagline: "Double Major in Marketing & Psychology",
   description:
-    "Michael A. West III — pursuing a B.S. in Marketing and Psychology at Saint Louis University. Business development at Enterprise Mobility, founder of Westhird. Online résumé and blog.",
+    "Michael A. West III is pursuing a B.S. in Marketing and Psychology at Saint Louis University. Business development at Enterprise Mobility, founder of Westhird. Online résumé and blog.",
   url: "https://westmichael.com",
   email: "michael@westmichael.com",
   linkedIn: "https://www.linkedin.com/in/mwest3/",

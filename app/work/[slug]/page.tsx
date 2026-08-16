@@ -30,14 +30,14 @@ export function generateMetadata({ params }: WorkPageProps): Metadata {
     description: item.seoDesc,
     alternates: { canonical: `/work/${item.slug}` },
     openGraph: {
-      title: `${item.seoTitle} — ${siteConfig.name}`,
+      title: `${item.seoTitle} · ${siteConfig.name}`,
       description: item.seoDesc,
       type: "article",
       url: `${siteConfig.url}/work/${item.slug}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${item.seoTitle} — ${siteConfig.name}`,
+      title: `${item.seoTitle} · ${siteConfig.name}`,
       description: item.seoDesc,
     },
   };

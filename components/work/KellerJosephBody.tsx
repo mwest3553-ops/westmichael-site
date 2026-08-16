@@ -87,7 +87,7 @@ export default function KellerJosephBody() {
             &ldquo;We pool judgment before capital. We move slowly, decide together, and hold what we
             believe in. Conviction, not noise, is our discipline.&rdquo;
           </p>
-          <div className="attr">— Keller Joseph Capital</div>
+          <div className="attr">Keller Joseph Capital</div>
         </div>
 
         <div className="cs-principles">

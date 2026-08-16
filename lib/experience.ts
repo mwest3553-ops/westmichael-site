@@ -27,6 +27,11 @@ export const experienceRoles: ExperienceRole[] = [
       "Run end-to-end campaigns spanning brand positioning, web design, and local SEO to grow client visibility, bookings, and inbound leads.",
       "Delivered a full brand and website build for Keller Joseph Capital that converted into a co-founding role, plus a branded client portal and admin dashboard for real-time project tracking.",
     ],
+    summary: [
+      "Founded a digital marketing agency delivering brand strategy, custom websites, and local SEO for small businesses and trades.",
+      "Run campaigns end to end, from positioning to web design, growing client visibility, bookings, and inbound leads.",
+      "A full brand and web build for Keller Joseph Capital turned into a co-founding role.",
+    ],
   },
   {
     company: "The Gatesworth",
@@ -37,6 +42,9 @@ export const experienceRoles: ExperienceRole[] = [
     bullets: [
       "Serve as primary point of contact for 200+ residents and guests, coordinating events and building the relationships behind loyalty and retention.",
     ],
+    summary: [
+      "Primary point of contact for 200+ residents and guests, coordinating events and building the relationships behind retention.",
+    ],
   },
   {
     company: "Rise Young Professionals Board",
@@ -46,6 +54,9 @@ export const experienceRoles: ExperienceRole[] = [
     location: "St. Louis, MO",
     bullets: [
       "Develop the marketing and communications playbook, messaging guidelines, and brand positioning for a community-development nonprofit to grow membership, participation, and partnerships.",
+    ],
+    summary: [
+      "Build the marketing and communications playbook and brand positioning for a community-development nonprofit.",
     ],
   },
   {
@@ -99,7 +110,7 @@ export const projects: Project[] = [
   {
     name: "Independent Apparel Brand",
     description:
-      "Founded and operate a self-funded apparel brand end-to-end — design, sourcing, and direct-to-consumer sales — generating four-figure revenue in its first month with no outside investment.",
+      "Founded and operate a self-funded apparel brand end-to-end (design, sourcing, and direct-to-consumer sales), generating four-figure revenue in its first month with no outside investment.",
   },
   {
     name: "AI-Powered Business Tools",

@@ -35,6 +35,8 @@ export interface ExperienceRole {
   endDate: string;
   location: string;
   bullets: string[];
+  /** Condensed points for the home "What I'm doing now" section, summarized from `bullets`. Falls back to `bullets` when absent. */
+  summary?: string[];
 }
 
 export interface Project {

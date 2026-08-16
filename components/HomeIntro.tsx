@@ -28,7 +28,7 @@ export default function HomeIntro() {
             <ScrollFadeIn delay={0.12} from="right">
               <div className="space-y-6 text-body-lg leading-relaxed text-muted-light md:text-h3 md:font-normal md:leading-relaxed">
                 <p>
-                  Driven by curiosity and a bias for action, I build things that connect people to what they need — treating every project as a test kitchen to experiment, learn, and grow.
+                  Driven by curiosity and a bias for action, I build things that connect people to what they need, treating every project as a test kitchen to experiment, learn, and grow.
                 </p>
                 <p>
                   Marketing and psychology are my lens; people are the through-line. Whether it's a client, a fund, or a classroom, the goal's the same: understand what drives someone, and help them get there.

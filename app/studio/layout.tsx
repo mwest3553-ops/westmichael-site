@@ -2,7 +2,7 @@ import { metadata as studioMetadata, viewport as studioViewport } from "next-san
 
 export const metadata = {
   ...studioMetadata,
-  title: "Studio — Michael A. West III",
+  title: "Studio · Michael A. West III",
   robots: { index: false, follow: false },
 };
 

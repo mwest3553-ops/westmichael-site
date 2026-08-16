@@ -86,7 +86,7 @@ export default function DeckViewer() {
       <div className="cs-deck-stage">
         <div className={`cs-deck-frame${flip ? " flip" : ""}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={cur.src} alt={`${track === "final" ? "Final" : "Midpoint"} report — ${cur.label}`} />
+          <img src={cur.src} alt={`${track === "final" ? "Final" : "Midpoint"} report: ${cur.label}`} />
         </div>
       </div>
 

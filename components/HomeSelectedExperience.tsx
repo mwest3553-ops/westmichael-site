@@ -74,7 +74,7 @@ export default function HomeSelectedExperience() {
                     </div>
                   </header>
                   <ul className="mt-6 space-y-3">
-                    {role.bullets.map((bullet, j) => (
+                    {(role.summary ?? role.bullets).map((bullet, j) => (
                       <li key={j} className="flex gap-3 text-body text-ink/85">
                         <span
                           className="mt-2.5 inline-block h-1 w-1 flex-none rounded-full bg-accent"
