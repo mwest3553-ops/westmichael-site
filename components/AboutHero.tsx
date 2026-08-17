@@ -12,6 +12,7 @@ const slideshowImages = [
   { src: "/images/about/02.jpg", position: "50% 50%", alt: "Michael A. West III" },
   { src: "/images/about/03.jpg", position: "50% 50%", alt: "Michael A. West III" },
   { src: "/images/about/04.jpg", position: "50% 50%", alt: "Michael A. West III" },
+  { src: "/images/about/05.jpg", position: "50% 50%", alt: "Michael A. West III with the Enterprise Mobility intern cohort" },
 ];
 
 const INTERVAL_MS = 5000;

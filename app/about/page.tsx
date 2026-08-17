@@ -42,7 +42,7 @@ export default async function AboutPage() {
                   <span className="h-px w-5 bg-accent/50" aria-hidden="true" />
                 </p>
                 <h1 className="mt-5 text-page-h1-mobile text-balance text-sheen md:text-page-h1">
-                  What I notice about people.
+                  A peek into who I am.
                 </h1>
               </ScrollFadeIn>
             </div>
