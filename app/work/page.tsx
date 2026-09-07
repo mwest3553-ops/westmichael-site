@@ -7,7 +7,7 @@ import { workItems } from "@/lib/work";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected marketing work by Michael A. West III: brand and web for a private investment group, a self-initiated channel strategy at Enterprise Mobility, a nonprofit earned-media plan, and a consumer-psychology spec teardown.",
+    "Selected marketing work by Michael A. West III: brand and web for a private investment group, a self-initiated channel strategy at Enterprise Mobility, and a nonprofit earned-media plan.",
   alternates: { canonical: "/work" },
 };
 
@@ -126,17 +126,7 @@ function CardVisual({ slug }: { slug: string }) {
     );
   }
 
-  // spotify
-  return (
-    <div className="cs-card-visual" style={{ background: "#0b0e0c" }}>
-      <img
-        src="/images/work/chapters-fall.png"
-        alt="Chapters season recap card concept"
-        loading="lazy"
-        style={{ objectFit: "contain", objectPosition: "center" }}
-      />
-    </div>
-  );
+  return null;
 }
 
 export default function WorkIndexPage() {

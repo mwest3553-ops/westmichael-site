@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/config";
 import KellerJosephBody from "@/components/work/KellerJosephBody";
 import EnterpriseBody from "@/components/work/EnterpriseBody";
 import RiseBody from "@/components/work/RiseBody";
-import SpotifyBody from "@/components/work/SpotifyBody";
 
 interface WorkPageProps {
   params: { slug: string };
@@ -15,7 +14,6 @@ const BODIES: Record<string, () => JSX.Element> = {
   "keller-joseph-capital": KellerJosephBody,
   "enterprise-mobility": EnterpriseBody,
   "rise-yp-board": RiseBody,
-  "spotify-teardown": SpotifyBody,
 };
 
 export function generateStaticParams() {

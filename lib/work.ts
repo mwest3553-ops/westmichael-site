@@ -51,18 +51,6 @@ export const workItems: WorkMeta[] = [
     seoDesc:
       "An earned-media amplification plan for a volunteer nonprofit board: nine local outlets, four angles, no ad budget.",
   },
-  {
-    slug: "spotify-teardown",
-    order: 4,
-    num: "04",
-    tag: "Spec project · Consumer psychology",
-    cardTitle: "Same catalog everywhere. One service turns listening into identity.",
-    cardBlurb:
-      "An independent teardown of the psychology behind Wrapped, plus a campaign concept built on the same mechanics.",
-    seoTitle: "Spotify: Marketing as Applied Psychology",
-    seoDesc:
-      "An independent spec teardown of the consumer psychology behind Spotify Wrapped, plus a campaign concept built on the same mechanics.",
-  },
 ];
 
 export function getWorkItem(slug: string): WorkMeta | undefined {

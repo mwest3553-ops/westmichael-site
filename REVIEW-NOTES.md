@@ -15,8 +15,8 @@ Key pages to review: `/work`, `/work/[case study]`, `/lab`, and the homepage (ne
 ## What changed
 
 ### 1. New `/work` case-study section
-- `/work` index + four case studies: `keller-joseph-capital`, `enterprise-mobility`,
-  `rise-yp-board`, `spotify-teardown`.
+- `/work` index + three case studies: `keller-joseph-capital`, `enterprise-mobility`,
+  `rise-yp-board`.
 - Ported from the design handoff into native Next.js + Tailwind (site's real nav/footer, tokens).
 - Interactive **Enterprise deck viewer** (Midpoint/Final tracks, prev/next).
 - "Work" added to nav + sitemap; per-page SEO + canonical URLs.
