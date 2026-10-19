@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import EmailLink from "./EmailLink";
@@ -25,9 +24,6 @@ export default function SiteFooter() {
               className="link-underline transition-colors hover:text-ink"
               label="Email"
             />
-            <Link href="/blog" className="link-underline transition-colors hover:text-ink">
-              Blog
-            </Link>
           </div>
         </div>
 
