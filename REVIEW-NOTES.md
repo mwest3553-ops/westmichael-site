@@ -1,78 +1,75 @@
-# Review notes — `feature/work-case-studies`
+# Portfolio review — October 19, 2026
 
-Everything below is on this branch, **not merged to `main` and not deployed**. This doc is for
-Michael + design to review before it goes live.
+## Current baseline
 
-## Run it locally
-```bash
-pnpm install
-pnpm dev            # http://localhost:3000
-```
-Key pages to review: `/work`, `/work/[case study]`, `/lab`, and the homepage (new proof bar).
+`main` and `origin/main` point to `161eaaafa4a81a7735aaffac4780a850087b9520`
+(`Remove Spotify case study`). The supplied portfolio brief identifies that commit
+as matching the live site. These notes replace the stale claim that
+`feature/work-case-studies` is unmerged and undeployed.
 
----
+Git records the Spotify case study removal on September 7, 2026, at 16:56:16
+-0500, in `161eaaafa4a81a7735aaffac4780a850087b9520`. Its diff removes
+`components/work/SpotifyBody.tsx`, the registry entry, the page integration, and
+`public/images/work/chapters-fall.png`. The current work registry contains
+`keller-joseph-capital`, `enterprise-mobility`, and `rise-yp-board`.
 
-## What changed
+## Items on `codex/portfolio-fixes-20261019`
 
-### 1. New `/work` case-study section
-- `/work` index + three case studies: `keller-joseph-capital`, `enterprise-mobility`,
-  `rise-yp-board`.
-- Ported from the design handoff into native Next.js + Tailwind (site's real nav/footer, tokens).
-- Interactive **Enterprise deck viewer** (Midpoint/Final tracks, prev/next).
-- "Work" added to nav + sitemap; per-page SEO + canonical URLs.
-- Code: `app/work/**`, `components/work/**`, `lib/work.ts`, images in `public/images/work/`.
+1. **Analytics — no code change.** `app/layout.tsx` mounts `Analytics`.
+   `components/Analytics.tsx` returns `null` without `NEXT_PUBLIC_GA_ID`;
+   `lib/analytics.ts` safely ignores events without a provider. Michael must
+   supply the GA4 measurement ID for Netlify's environment, followed by a rebuild.
+2. **Résumé — no code change.** `public/resume.pdf` is zero bytes and remains
+   untouched. The Experience download links to
+   `/Michael-A-West-III-Resume.pdf` (133,355 bytes), with download name
+   `Michael A West III Resume.pdf`. `public/README.txt` still describes the old
+   `/resume.pdf` link. The external report inventories references and proposes
+   interim behavior; no résumé content, link, or PDF is changed.
+3. **Default OG image.** `lib/config.ts` now points `ogImage` to the existing
+   `/opengraph-image.png` route, backed by `app/opengraph-image.png` (1200×630).
+   The root layout already uses that file through Next.js metadata conventions.
+   No image was generated; the old `/images/og-default.png` URL remains absent.
+4. **SEO description.** `lib/config.ts` reuses the exact description already in
+   `app/about/page.tsx`: “Michael A. West III is pursuing a B.S. in Marketing and
+   Psychology at Saint Louis University. Founder of Westhird.” This removes the
+   stale Enterprise Mobility reference from the default description only.
+   **Final wording is flagged for Michael's review.**
+5. **VISUAL CHANGE — hide Blog navigation.** Removed Blog from the shared header
+   menu and footer in `components/SiteHeader.tsx` and `components/SiteFooter.tsx`.
+   `/blog`, its Coming soon state, and sitemap entry remain available. Restore
+   those links when posts exist. This item is separate from the metadata fixes.
+6. **Review notes.** Replaced this stale document with baseline evidence,
+   the six-item inventory, and open questions.
 
-### 2. Copy rewritten with a point of view
-Headings across the site now carry an opinion (was → now):
-- The full résumé → **The work behind the résumé.**
-- A little background → **What I notice about people.**
-- What I'm doing now → **Work that moved the number.**
-- What I bring to the table → **Built, tested, learned.**
-- Essays and notes → **Ideas I'm pressure-testing.**
-- Let's connect → **Let's build something useful.**
-- Footer: "Powered by Westhird" → **"Designed and built by Michael West through Westhird."**
+## Verification and delivery limits
 
-### 3. Homepage "By the numbers" proof bar
-- New `components/HomeProofBar.tsx`, high on the homepage. Honest, case-study-backed figures
-  (+14% · #1/10 · 700+ · Co-founder).
+Unconfigured baseline lint passes. Unconfigured baseline build fails with
+`Error: Missing environment variable: NEXT_PUBLIC_SANITY_DATASET` while collecting
+page data for `/sitemap.xml`. The same environment limitation applies after the
+code changes. Public Sanity configuration (`l6jywyq1`, `production`) was obtained
+from the live site's public Studio JavaScript for additional local preview
+checks; no token or environment file was created. Both configured production
+builds passed, and after-change lint passed. Ten routes return HTTP 200 before
+and after, with identical main page text. The OG route returns 200; the legacy
+OG path remains 404; the résumé responses remain unchanged. Headless Chrome
+exits with SIGABRT before producing any screenshots, so visual verification
+remains open.
 
-### 4. SEO + credibility
-- Person **structured data** (JSON-LD): `components/PersonJsonLd.tsx`.
-- **Canonical URLs** on every route.
-- `aria-current` on the active nav item; descriptive About alt text (with a TODO to make each
-  photo-specific).
-- Removed the undemonstrable **"AI Application Development"** skill label.
+Run 1 could not write Git commits because its sandbox blocked `.git/index.lock`.
+Run 2 commits items 3–6 separately on `codex/portfolio-fixes-20261019`.
+The original item patches remain outside the repository in
+`~/Developer/review/portfolio-checks-20261019/`. No merge, deploy, PR, rebase,
+force push, or change to `main` was performed. See the external report for
+run-2 verification, screenshots, and final push results.
 
-### 5. Behavior Lab — a live experiment  ⭐ the signature feature
-- Route: **`/lab`**. An interactive anchoring demonstration.
-- Flow: random anchor (180 or 1,600 ft) → estimate → reveal.
-- **It's a real experiment.** Each guess is recorded into a per-anchor aggregate, and the reveal
-  shows the true **between-groups gap** (low-anchor avg vs high-anchor avg, with sample sizes).
-  This is the honest way to show anchoring — it's a group effect, not an individual one, so there is
-  deliberately **no** "your guess was pulled" per-person claim.
-- Storage: **Netlify Blobs** in production, in-memory fallback locally (local counts reset on server
-  restart — that's expected).
-- Code: `components/BehaviorLab.tsx`, `app/api/behavior-lab/route.ts`, `lib/behaviorLabStore.ts`.
+## Open questions for Michael
 
-### 6. Analytics — plumbed, dormant until activated
-- `lib/analytics.ts` (`track()` helper) + `components/Analytics.tsx` (GA4 loader + a delegated
-  `[data-track]` click listener). No-ops until an ID is set.
-- **To activate:** add `NEXT_PUBLIC_GA_ID="G-XXXX"` to the environment. (Plausible also works.)
-- Events wired: `resume_download`, `contact_click`, `behavior_lab_start/complete/contact`.
+- What is the GA4 measurement ID to set as `NEXT_PUBLIC_GA_ID` in Netlify?
+- Which PDF is current, and should the legacy `/resume.pdf` URL eventually
+  redirect to the named PDF? Supply/approve the PDF before replacing either file.
+- Approve the reused About description as the default SEO wording.
+- Keep Blog hidden until posts exist, or retain its navigation with Coming soon?
+- Confirm the existing branded Open Graph image remains the desired default.
 
-### 7. Résumé
-- Site now serves the latest résumé; the download saves as **`Michael A West III Resume.pdf`**.
-
----
-
-## Deliberately NOT done — for design / a decision
-- **Visual polish** — fewer bordered cards, a homepage photograph, serif+mono type mix, oversized
-  numbers, motion-that-explains. Design's lane. The homepage photo needs an actual asset from Michael.
-- **Skills → projects consolidation** — attach skills to the projects that prove them and de-dupe the
-  home/About skills lists. Has taste calls; left for a decision.
-- **Publishing the notes** — the three planned notes aren't written/published yet.
-- **Deploy** — held for Michael's explicit go.
-
-## To deploy (when ready)
-Merge `feature/work-case-studies` → `main` and push; Netlify builds from there. Confirm Netlify Blobs
-is enabled on the site so the Behavior Lab tally persists in production.
+Full report: `~/Developer/review/portfolio-report-20261019.md`.
+Screenshots: `~/Developer/review/portfolio-screenshots-20261019/`.
