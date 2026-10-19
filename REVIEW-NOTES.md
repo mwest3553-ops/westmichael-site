@@ -19,12 +19,13 @@ Git records the Spotify case study removal on September 7, 2026, at 16:56:16
    `components/Analytics.tsx` returns `null` without `NEXT_PUBLIC_GA_ID`;
    `lib/analytics.ts` safely ignores events without a provider. Michael must
    supply the GA4 measurement ID for Netlify's environment, followed by a rebuild.
-2. **Résumé — no code change.** `public/resume.pdf` is zero bytes and remains
-   untouched. The Experience download links to
+2. **Résumé — legacy URL redirect.** `public/resume.pdf` is zero bytes and remains
+   untouched; a forced 301 in `netlify.toml` now sends `/resume.pdf` to
+   `/Michael-A-West-III-Resume.pdf` (separate redirect commit). The Experience download links to
    `/Michael-A-West-III-Resume.pdf` (133,355 bytes), with download name
    `Michael A West III Resume.pdf`. `public/README.txt` still describes the old
    `/resume.pdf` link. The external report inventories references and proposes
-   interim behavior; no résumé content, link, or PDF is changed.
+   interim behavior; no résumé content, link, or PDF file is changed.
 3. **Default OG image.** `lib/config.ts` now points `ogImage` to the existing
    `/opengraph-image.png` route, backed by `app/opengraph-image.png` (1200×630).
    The root layout already uses that file through Next.js metadata conventions.
@@ -51,9 +52,8 @@ from the live site's public Studio JavaScript for additional local preview
 checks; no token or environment file was created. Both configured production
 builds passed, and after-change lint passed. Ten routes return HTTP 200 before
 and after, with identical main page text. The OG route returns 200; the legacy
-OG path remains 404; the résumé responses remain unchanged. Headless Chrome
-exits with SIGABRT before producing any screenshots, so visual verification
-remains open.
+OG path remains 404; the résumé responses remain unchanged. Before/after screenshots
+were captured in Codex run 2 and are stored outside the repository (see below).
 
 Run 1 could not write Git commits because its sandbox blocked `.git/index.lock`.
 Run 2 commits items 3–6 separately on `codex/portfolio-fixes-20261019`.
