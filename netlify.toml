@@ -12,6 +12,14 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Legacy résumé URL: public/resume.pdf is an empty static file, so force the
+# redirect to take precedence over it.
+[[redirects]]
+  from = "/resume.pdf"
+  to = "/Michael-A-West-III-Resume.pdf"
+  status = 301
+  force = true
+
 # Studio is a client-side React app embedded at /studio
 # Don't try to prerender or cache it aggressively
 [[headers]]
