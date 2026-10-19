@@ -7,7 +7,7 @@ export const siteConfig = {
   url: "https://westmichael.com",
   email: "michael@westmichael.com",
   linkedIn: "https://www.linkedin.com/in/mwest3/",
-  ogImage: "/images/og-default.png",
+  ogImage: "/opengraph-image.png",
   twitterHandle: "",
   authorJobTitle: "Aspiring Professional",
   locale: "en_US",
