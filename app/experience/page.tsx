@@ -9,7 +9,7 @@ import FloatingOrbs from "@/components/FloatingOrbs";
 
 const RELEVANT = ["Westhird", "Enterprise Mobility", "St. Louis Sports Commission"];
 const ADDITIONAL = ["The Gatesworth", "Adams Park Boys & Girls Club"];
-const LEADERSHIP = ["Keller Joseph Capital", "West Family Scholarship Fund", "Rise Young Professionals Board"];
+const LEADERSHIP = ["West Family Scholarship Fund", "Keller Joseph Capital", "Rise Young Professionals Board"];
 
 function pick(names: string[]): ExperienceRole[] {
   return names
@@ -116,12 +116,13 @@ export default function ExperiencePage() {
               Beyond the day-to-day.
             </h2>
           </ScrollFadeIn>
-          <div className="mt-12 grid grid-cols-1 items-start gap-4 md:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 items-stretch gap-4 md:grid-cols-2">
             {leadership.map((role, i) => (
               <ScrollFadeIn
                 key={role.company + i}
                 delay={i * 0.05}
-                from={i % 2 === 0 ? "left" : "right"}
+                from={i === 0 ? "up" : i % 2 === 1 ? "left" : "right"}
+                className={i === 0 ? "h-full md:col-span-2" : "h-full"}
               >
                 <article className="lift-card group flex h-full flex-col rounded-md border border-border-light bg-white p-6 shadow-sm hover:border-accent/60 md:p-8">
                   <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">

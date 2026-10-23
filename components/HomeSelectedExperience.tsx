@@ -4,7 +4,7 @@ import ScrollFadeIn from "./ScrollFadeIn";
 import RoleDateRange from "./RoleDateRange";
 
 // What I'm doing now — current, ongoing roles (Enterprise internship has ended).
-const FEATURED = ["Westhird", "West Family Scholarship Fund", "Rise Young Professionals Board", "The Gatesworth"];
+const FEATURED = ["West Family Scholarship Fund", "Westhird", "Rise Young Professionals Board", "The Gatesworth"];
 
 export default function HomeSelectedExperience() {
   const selected = FEATURED.map((name) =>
