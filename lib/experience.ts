@@ -71,6 +71,22 @@ export const experienceRoles: ExperienceRole[] = [
     ],
   },
   {
+    company: "West Family Scholarship Fund",
+    url: "https://westfamilyscholarship.com",
+    title: "Co-Founder",
+    startDate: "Aug 2026",
+    endDate: "Present",
+    location: "Albany, NY",
+    bullets: [
+      "Co-founded a $20,000 four-year renewable scholarship and work-internship program in partnership with Capital Repertory Theatre (theREP) for Albany, NY students pursuing performing arts or theatre business.",
+      "Built and launched the brand, production website (westfamilyscholarship.com), interactive eligibility checker, and automated application pipeline.",
+    ],
+    summary: [
+      "Co-founded a $20,000 four-year renewable scholarship and work-internship program in partnership with Capital Repertory Theatre (theREP) for Albany, NY students.",
+      "Built and launched the brand, production website, interactive eligibility checker, and automated application pipeline.",
+    ],
+  },
+  {
     company: "Saint Louis Public Schools",
     title: "Teacher Aide",
     startDate: "Aug 2024",

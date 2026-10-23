@@ -1,5 +1,6 @@
 import type { ExperienceRole } from "@/lib/types";
 import ScrollFadeIn from "./ScrollFadeIn";
+import RoleDateRange from "./RoleDateRange";
 
 // Clean stacked role list (dark section) — matches the design mockup's
 // Relevant / Additional Experience layout.
@@ -33,7 +34,7 @@ export default function ExperienceList({ roles }: { roles: ExperienceRole[] }) {
             </div>
             <div className="shrink-0 md:text-right">
               <p className="text-meta font-semibold uppercase tracking-[0.12em] text-accent-deep">
-                {role.startDate} – {role.endDate}
+                <RoleDateRange startDate={role.startDate} endDate={role.endDate} />
               </p>
               <p className="mt-1 text-meta text-muted">{role.location}</p>
             </div>

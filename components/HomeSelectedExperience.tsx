@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { experienceRoles } from "@/lib/experience";
 import ScrollFadeIn from "./ScrollFadeIn";
+import RoleDateRange from "./RoleDateRange";
 
 // What I'm doing now — current, ongoing roles (Enterprise internship has ended).
-const FEATURED = ["Westhird", "Rise Young Professionals Board", "The Gatesworth"];
+const FEATURED = ["Westhird", "West Family Scholarship Fund", "Rise Young Professionals Board", "The Gatesworth"];
 
 export default function HomeSelectedExperience() {
   const selected = FEATURED.map((name) =>
@@ -68,7 +69,7 @@ export default function HomeSelectedExperience() {
                     </div>
                     <div className="text-meta text-muted md:text-right">
                       <p>
-                        {role.startDate} – {role.endDate}
+                        <RoleDateRange startDate={role.startDate} endDate={role.endDate} />
                       </p>
                       <p>{role.location}</p>
                     </div>

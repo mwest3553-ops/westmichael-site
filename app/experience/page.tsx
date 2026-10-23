@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { experienceRoles } from "@/lib/experience";
 import type { ExperienceRole } from "@/lib/types";
 import ExperienceList from "@/components/ExperienceList";
+import RoleDateRange from "@/components/RoleDateRange";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 import AnimatedStripe from "@/components/AnimatedStripe";
 import FloatingOrbs from "@/components/FloatingOrbs";
 
 const RELEVANT = ["Westhird", "Enterprise Mobility", "St. Louis Sports Commission"];
 const ADDITIONAL = ["The Gatesworth", "Adams Park Boys & Girls Club"];
-const LEADERSHIP = ["Keller Joseph Capital", "Rise Young Professionals Board"];
+const LEADERSHIP = ["Keller Joseph Capital", "West Family Scholarship Fund", "Rise Young Professionals Board"];
 
 function pick(names: string[]): ExperienceRole[] {
   return names
@@ -126,12 +127,23 @@ export default function ExperiencePage() {
                   <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
                     <div>
                       <h3 className="text-h3 font-semibold text-ink-dark transition-colors duration-300 group-hover:text-accent-deep">
-                        {role.company}
+                        {role.url ? (
+                          <a
+                            href={role.url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="underline decoration-accent/50 underline-offset-4 transition-colors hover:decoration-accent"
+                          >
+                            {role.company}
+                          </a>
+                        ) : (
+                          role.company
+                        )}
                       </h3>
                       <p className="mt-1 text-meta text-muted-light">{role.title}</p>
                     </div>
                     <p className="shrink-0 text-meta text-muted-light md:pl-4 md:text-right">
-                      {role.startDate} – {role.endDate}
+                      <RoleDateRange startDate={role.startDate} endDate={role.endDate} />
                     </p>
                   </div>
                   <ul className="mt-4 space-y-2">
